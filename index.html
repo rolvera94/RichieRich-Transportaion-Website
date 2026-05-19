@@ -168,6 +168,13 @@ section { padding: 5.5rem 2rem; }
 .hire-alert { background: var(--navy-dark); color: var(--cream); padding: 1.2rem 1.4rem; margin-bottom: 1.8rem; border-left: 4px solid var(--gold); display: flex; gap: .75rem; align-items: flex-start; }
 .hire-alert p { font-size: .83rem; line-height: 1.65; color: rgba(242,237,216,.75); }
 .hire-alert strong { color: var(--gold); display: block; font-size: .68rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: .3rem; }
+.apply-wrap { margin-top: 4rem; background: #fff; padding: 2.5rem; border-top: 4px solid var(--gold); box-shadow: 0 16px 50px rgba(28,46,74,.10); }
+.apply-head { margin-bottom: 2rem; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(28,46,74,.10); }
+.apply-head h3 { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--navy-dark); margin-bottom: .5rem; }
+.apply-head p { font-size: .88rem; color: var(--gray); line-height: 1.7; }
+.apply-head a { color: var(--navy); font-weight: 700; }
+#apply-success { display: none; background: #1f6f3f; color: #fff; padding: .9rem 1.1rem; font-size: .85rem; font-weight: 600; margin-top: 1rem; }
+#apply-success.show { display: block; }
 .req-list { display: flex; flex-direction: column; gap: .75rem; margin-bottom: 2rem; }
 .req-item { display: flex; align-items: center; gap: .9rem; padding: .88rem 1.2rem; background: var(--white); border: 1px solid #E8E2D0; }
 .req-check { width: 28px; height: 28px; min-width: 28px; background: var(--navy); display: flex; align-items: center; justify-content: center; }
@@ -257,7 +264,7 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
     <li><a href="#richard">Our Story</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#fleet">Fleet</a></li>
-    <li><a href="#hiring">We're Hiring</a></li>
+    <li><a href="#careers">Careers</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Get a Quote</a>
@@ -480,10 +487,11 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
 </section>
 
 <!-- HIRING -->
-<section class="hire-bg" id="hiring">
+<section class="hire-bg" id="careers">
   <div class="container">
     <div class="sec-eyebrow"><div class="sec-bar"></div><div class="sec-tag fade">Join the Team</div></div>
-    <h2 class="sec-title fade">We're Hiring</h2>
+    <h2 class="sec-title fade">Careers</h2>
+    <p class="sec-sub fade">Driver, owner-operator, dispatch, maintenance — if you've got the chops and want to run with a tight family operation, apply below or call Richard at <a href="tel:2814682201" style="color:var(--navy);font-weight:800;">281.468.2201</a>.</p>
     <div class="hire-inner">
       <div class="fade">
         <img class="hire-img" src="/mnt/user-data/uploads/FullSizeRender.jpeg" alt="Red Magic loaded with lumber — the job in action" />
@@ -493,7 +501,7 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
           <div style="font-size:1.3rem;line-height:1;margin-top:1px;">⚠️</div>
           <div><p><strong>Heads Up Before You Apply</strong>This is NOT a 9-to-5 job. You may be out on the road for 2–3 days at a time. If you're ready to work hard, run flatbed the right way, and be part of a real family operation — we want to hear from you.</p></div>
         </div>
-        <p style="font-size:.86rem;color:var(--gray);line-height:1.8;margin-bottom:1.5rem;">RichieRich Transportation LLC is a tight operation and we only bring on drivers who meet the standard. Here's what we require:</p>
+        <p style="font-size:.86rem;color:var(--gray);line-height:1.8;margin-bottom:1.5rem;">RichieRich Transportation LLC is a tight operation and we only bring on drivers who meet the standard. Here's what we require for driving positions:</p>
         <div class="req-list">
           <div class="req-item">
             <div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
@@ -514,6 +522,86 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
         </div>
         <a href="tel:2814682201" class="btn-gold" style="display:inline-block;">Call to Apply — 281.468.2201</a>
       </div>
+    </div>
+
+    <div class="apply-wrap fade">
+      <div class="apply-head">
+        <h3>Apply Online</h3>
+        <p>Fill this out and Richard will reach out personally. Prefer to send a résumé? Email it to <a href="mailto:richierichtransportationllc@gmail.com">richierichtransportationllc@gmail.com</a>.</p>
+      </div>
+      <form class="contact-form" onsubmit="handleApplySubmit(event)">
+        <div class="form-row">
+          <div class="fg"><label>First Name</label><input type="text" placeholder="John" required /></div>
+          <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith" required /></div>
+        </div>
+        <div class="form-row">
+          <div class="fg"><label>Phone</label><input type="tel" placeholder="(555) 000-0000" required /></div>
+          <div class="fg"><label>Email</label><input type="email" placeholder="you@example.com" required /></div>
+        </div>
+        <div class="form-row">
+          <div class="fg">
+            <label>Position Applying For</label>
+            <select required>
+              <option value="">Select a position...</option>
+              <option>Flatbed Driver (CDL)</option>
+              <option>Owner-Operator</option>
+              <option>Dispatcher</option>
+              <option>Mechanic / Maintenance</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg"><label>City / State</label><input type="text" placeholder="Houston, TX" /></div>
+        </div>
+        <div class="form-row">
+          <div class="fg">
+            <label>Years of Driving Experience</label>
+            <select>
+              <option value="">Select...</option>
+              <option>Less than 1 year</option>
+              <option>1 – 2 years</option>
+              <option>2 – 5 years</option>
+              <option>5 – 10 years</option>
+              <option>10+ years</option>
+              <option>N/A (non-driving role)</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>CDL Class</label>
+            <select>
+              <option value="">Select...</option>
+              <option>Class A</option>
+              <option>Class B</option>
+              <option>Class C</option>
+              <option>None / Not Applicable</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="fg">
+            <label>TWIC Card</label>
+            <select>
+              <option value="">Select...</option>
+              <option>Yes, currently valid</option>
+              <option>Expired</option>
+              <option>No, but willing to obtain</option>
+              <option>No</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>Clean Driving Record (2+ yrs)</label>
+            <select>
+              <option value="">Select...</option>
+              <option>Yes</option>
+              <option>Mostly — minor incidents</option>
+              <option>No</option>
+              <option>N/A (non-driving role)</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg"><label>Tell Us About Yourself</label><textarea placeholder="Previous companies, equipment you've run, why you want to join RichieRich..."></textarea></div>
+        <button type="submit" class="btn-gold" style="align-self:flex-start;">Submit Application →</button>
+        <div id="apply-success">✓ Application received! Richard will review and reach out to you directly.</div>
+      </form>
     </div>
   </div>
 </section>
@@ -611,7 +699,7 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
         <li><a href="#services">Services</a></li>
         <li><a href="#fleet">Blue Magic & Red Magic</a></li>
         <li><a href="#coverage">Coverage Area</a></li>
-        <li><a href="#hiring">We're Hiring</a></li>
+        <li><a href="#careers">Careers</a></li>
         <li><a href="#contact">Get a Quote</a></li>
       </ul>
     </div>
@@ -671,6 +759,14 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
     s.style.display = 'block';
     e.target.reset();
     setTimeout(() => s.style.display = 'none', 7000);
+  }
+
+  function handleApplySubmit(e) {
+    e.preventDefault();
+    const s = document.getElementById('apply-success');
+    s.classList.add('show');
+    e.target.reset();
+    setTimeout(() => s.classList.remove('show'), 7000);
   }
 </script>
 </body>
