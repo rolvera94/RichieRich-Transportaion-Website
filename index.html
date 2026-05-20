@@ -32,6 +32,7 @@ body { font-family: 'Montserrat', sans-serif; color: var(--navy-dark); backgroun
 /* NAV */
 nav { background: var(--navy); height: 74px; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 999; box-shadow: 0 2px 24px rgba(0,0,0,.35); }
 .nav-logo { display: flex; align-items: center; gap: .9rem; text-decoration: none; }
+.nav-logo-img { height: 60px; width: auto; display: block; }
 .rr-svg { width: 48px; height: 48px; flex-shrink: 0; }
 .logo-name { font-size: 1rem; font-weight: 900; color: var(--cream); letter-spacing: 1.5px; line-height: 1.1; }
 .logo-name em { font-style: normal; color: var(--gold); }
@@ -302,19 +303,8 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
 
 <!-- NAV -->
 <nav>
-  <a href="#home" class="nav-logo">
-    <svg class="rr-svg" viewBox="0 0 52 52" fill="none">
-      <path d="M5 8L5 44" stroke="#C8A84B" stroke-width="4.5" stroke-linecap="round"/>
-      <path d="M5 8L17 8Q25 8 25 16Q25 24 17 24L5 24" stroke="#C8A84B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <path d="M17 24L25 44" stroke="#C8A84B" stroke-width="4.5" stroke-linecap="round"/>
-      <path d="M19 13L19 44" stroke="rgba(242,237,216,.75)" stroke-width="3.5" stroke-linecap="round"/>
-      <path d="M19 13L31 13Q39 13 39 21Q39 29 31 29L19 29" stroke="rgba(242,237,216,.75)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <path d="M31 29L39 44" stroke="rgba(242,237,216,.75)" stroke-width="3.5" stroke-linecap="round"/>
-    </svg>
-    <div>
-      <div class="logo-name"><em>RichieRich</em> Transportation</div>
-      <div class="logo-sub">LLC · Tomball, TX</div>
-    </div>
+  <a href="#home" class="nav-logo" aria-label="RichieRich Transportation LLC">
+    <img class="nav-logo-img" src="images/Gold%20RR%20Logo.png" alt="RichieRich Transportation LLC" />
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -395,13 +385,6 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
     <div class="bio-inner">
       <div class="fade">
         <div class="bio-media">
-          <div class="bio-photo-wrap">
-            <img class="bio-photo" src="images/Richard%20CEO.jfif" alt="Richard Olvera Sr., Owner of RichieRich Transportation" />
-            <div class="bio-stripe">
-              <div class="bio-stripe-name">Richard Olvera Sr.</div>
-              <div class="bio-stripe-title">Owner · Operator · Houston, TX Native</div>
-            </div>
-          </div>
           <div class="houston-slider" aria-label="Houston, Texas">
             <div class="houston-track">
               <img class="houston-slide active" src="images/Hosuton.jfif" alt="Houston skyline" />
@@ -746,19 +729,8 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
 <footer>
   <div class="footer-top">
     <div>
-      <a href="#home" class="nav-logo" style="display:inline-flex;">
-        <svg class="rr-svg" style="width:44px;height:44px;" viewBox="0 0 52 52" fill="none">
-          <path d="M5 8L5 44" stroke="#C8A84B" stroke-width="4.5" stroke-linecap="round"/>
-          <path d="M5 8L17 8Q25 8 25 16Q25 24 17 24L5 24" stroke="#C8A84B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M17 24L25 44" stroke="#C8A84B" stroke-width="4.5" stroke-linecap="round"/>
-          <path d="M19 13L19 44" stroke="rgba(242,237,216,.75)" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M19 13L31 13Q39 13 39 21Q39 29 31 29L19 29" stroke="rgba(242,237,216,.75)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M31 29L39 44" stroke="rgba(242,237,216,.75)" stroke-width="3.5" stroke-linecap="round"/>
-        </svg>
-        <div>
-          <div class="logo-name"><em>RichieRich</em> Transportation</div>
-          <div class="logo-sub">LLC · Tomball, TX</div>
-        </div>
+      <a href="#home" class="nav-logo" style="display:inline-flex;" aria-label="RichieRich Transportation LLC">
+        <img src="images/Gold%20RR%20Logo.png" alt="RichieRich Transportation LLC" style="height:110px;width:auto;display:block;" />
       </a>
       <p class="footer-brand-desc">Owner-operated flatbed carrier based in Tomball, TX. Founded December 2021 by Richard Olvera Sr. — Houston born, road proven. Built on family. Driven by integrity.</p>
     </div>
