@@ -37,6 +37,7 @@ nav { background: var(--navy); height: 74px; padding: 0 3rem; display: flex; ali
 .logo-name em { font-style: normal; color: var(--gold); }
 .logo-sub { font-size: .58rem; font-weight: 600; color: rgba(242,237,216,.4); letter-spacing: 2.5px; text-transform: uppercase; margin-top: 2px; }
 .nav-links { display: flex; gap: 0; list-style: none; }
+.nav-links li.mobile-cta { display: none; }
 .nav-links a { color: rgba(242,237,216,.68); text-decoration: none; font-size: .72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: .5rem .85rem; transition: color .2s; }
 .nav-links a:hover { color: var(--gold); }
 .nav-cta { background: var(--gold); color: var(--navy-dark); border: none; padding: .6rem 1.4rem; font-family: 'Montserrat',sans-serif; font-size: .72rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s; }
@@ -252,6 +253,7 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
   }
   nav.open .nav-links { max-height: 560px; }
   .nav-links li { width: 100%; }
+  .nav-links li.mobile-cta { display: list-item; }
   .nav-links a { display: block; padding: 1.05rem 1.4rem; font-size: .82rem; border-bottom: 1px solid rgba(255,255,255,.05); }
   .nav-links li.mobile-cta a { background: var(--gold); color: var(--navy-dark); font-weight: 800; }
   .hero { min-height: 88vh; }
@@ -291,7 +293,7 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
 
 <!-- TOP BAR -->
 <div class="topbar">
-  <div>📍 Tomball, TX &nbsp;·&nbsp; USDOT# 4024817</div>
+  <div>📍 Tomball, TX &nbsp;·&nbsp; EST. 2021</div>
   <div class="tb-r">
     <div><span>📞</span><a href="tel:2814682201">281.468.2201</a></div>
     <div><span>✉</span><a href="mailto:richierichtransportationllc@gmail.com">richierichtransportationllc@gmail.com</a></div>
@@ -321,9 +323,9 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
     <li><a href="#fleet">Fleet</a></li>
     <li><a href="#careers">Careers</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li class="mobile-cta"><a href="#contact">Get a Quote</a></li>
+    <li class="mobile-cta"><a href="#quote">Get a Quote</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Get a Quote</a>
+  <a href="#quote" class="nav-cta">Get a Quote</a>
   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -334,11 +336,10 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
   <img class="hero-photo" src="images/Blue%20Truck%20Loaded.jfif" alt="Blue Magic — RichieRich Transportation flatbed on location" />
   <div class="hero-grad"></div>
   <div class="hero-content">
-    <div class="eyebrow"><div class="ebar"></div><div class="etxt">Flatbed Carrier · Tomball, TX · Est. December 2021</div></div>
     <h1>Freight Delivered.<br/><span>On Time.</span> Every Time.</h1>
     <p class="hero-p">RichieRich Transportation LLC is a Tomball-based, owner-operated flatbed carrier built on family, hard work, and a handshake promise. One standard. Your load is our reputation.</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-gold">Request a Quote</a>
+      <a href="#quote" class="btn-gold">Request a Quote</a>
       <a href="#fleet" class="btn-ghost">Meet the Fleet ↓</a>
     </div>
     <div class="hero-stats">
@@ -428,8 +429,6 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
         <div class="bio-facts">
           <div class="bio-fact"><div class="bf-label">Founded</div><div class="bf-value">December 3, 2021</div></div>
           <div class="bio-fact"><div class="bf-label">Hometown</div><div class="bf-value">Houston, Texas</div></div>
-          <div class="bio-fact"><div class="bf-label">USDOT#</div><div class="bf-value">4024817</div></div>
-          <div class="bio-fact"><div class="bf-label">TXDMV</div><div class="bf-value">009730224C</div></div>
         </div>
       </div>
     </div>
@@ -521,12 +520,7 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
       <div class="fade">
         <div class="sec-eyebrow"><div class="sec-bar"></div><div class="sec-tag">Where We Run</div></div>
         <h2 class="sec-title lt">Service Coverage</h2>
-        <p class="sec-sub lt">Based in Tomball, TX — running throughout Texas and across the South. Call us to confirm availability for your specific route.</p>
-        <div class="creds">
-          <div class="cred"><div class="cred-lbl">USDOT Number</div><div class="cred-val">4024817</div></div>
-          <div class="cred"><div class="cred-lbl">TXDMV Registration</div><div class="cred-val">009730224C</div></div>
-          <div class="cred"><div class="cred-lbl">Business Type</div><div class="cred-val">Limited Liability Company (LLC)</div></div>
-        </div>
+        <p class="sec-sub lt">Based in Tomball, TX — we run <strong style="color:var(--gold);font-weight:700;">local hauls and out-of-state long runs</strong>, throughout Texas and across the South. Call us to confirm availability for your specific route.</p>
       </div>
       <div class="fade">
         <div class="states-grid">
@@ -551,10 +545,7 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
     <div class="sec-eyebrow"><div class="sec-bar"></div><div class="sec-tag fade">Join the Team</div></div>
     <h2 class="sec-title fade">Careers</h2>
     <p class="sec-sub fade">Driver, owner-operator, dispatch, maintenance — if you've got the chops and want to run with a tight family operation, apply below or call Richard at <a href="tel:2814682201" style="color:var(--navy);font-weight:800;">281.468.2201</a>.</p>
-    <div class="hire-inner">
-      <div class="fade">
-        <img class="hire-img" src="images/Red%20Truck%20Loaded.jfif" alt="Red Magic loaded with lumber — the job in action" />
-      </div>
+    <div class="hire-inner" style="grid-template-columns:1fr;max-width:760px;">
       <div class="fade">
         <div class="hire-alert">
           <div style="font-size:1.3rem;line-height:1;margin-top:1px;">⚠️</div>
@@ -666,12 +657,12 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="quote">
   <div class="container">
     <div class="sec-eyebrow"><div class="sec-bar"></div><div class="sec-tag fade">Let's Talk Freight</div></div>
     <h2 class="sec-title fade">Request a Quote</h2>
     <p class="sec-sub fade">Fill out the form or call Richard directly at <a href="tel:2814682201" style="color:var(--navy);font-weight:800;">281.468.2201</a>. We respond same day.</p>
-    <div class="contact-wrap">
+    <div class="contact-wrap" style="grid-template-columns:1fr;max-width:780px;">
       <form class="contact-form fade" onsubmit="handleSubmit(event)">
         <div class="form-row">
           <div class="fg"><label>First Name</label><input type="text" placeholder="John" required /></div>
@@ -701,28 +692,37 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
         <button type="submit" class="btn-gold" style="align-self:flex-start;">Send Request →</button>
         <div id="form-success">✓ Message received! Richard will be in touch with you shortly.</div>
       </form>
-      <div class="contact-details fade">
-        <div class="cdet">
-          <div class="cdet-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-          <div><div class="cdet-lbl">Call Richard Directly</div><div class="cdet-val"><a href="tel:2814682201">281.468.2201</a></div></div>
-        </div>
-        <div class="cdet">
-          <div class="cdet-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><div class="cdet-lbl">Email</div><div class="cdet-val"><a href="mailto:richierichtransportationllc@gmail.com">richierichtransportationllc@gmail.com</a></div></div>
-        </div>
-        <div class="cdet">
-          <div class="cdet-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><div class="cdet-lbl">Based In</div><div class="cdet-val">Tomball, Texas</div></div>
-        </div>
-        <div class="cdet">
-          <div class="cdet-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-          <div>
-            <div class="cdet-lbl">Hours</div>
-            <div style="display:flex;flex-direction:column;gap:5px;margin-top:4px;">
-              <div style="display:flex;justify-content:space-between;font-size:.82rem;gap:1rem;"><span style="color:var(--gray);font-weight:500;">Mon – Fri</span><span style="font-weight:700;">6am – 8pm CT</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:.82rem;gap:1rem;"><span style="color:var(--gray);font-weight:500;">Saturday</span><span style="font-weight:700;">7am – 5pm CT</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:.82rem;gap:1rem;"><span style="color:var(--gray);font-weight:500;">Sunday</span><span style="font-weight:700;">By Appointment</span></div>
-            </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT INFORMATION -->
+<section id="contact" style="background:var(--cream-lt);">
+  <div class="container">
+    <div class="sec-eyebrow"><div class="sec-bar"></div><div class="sec-tag fade">Get In Touch</div></div>
+    <h2 class="sec-title fade">Contact Information</h2>
+    <p class="sec-sub fade">Reach Richard directly — phone, email, or stop in. We're easy to find and always glad to talk freight.</p>
+    <div class="contact-details fade" style="max-width:720px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 2.5rem;">
+      <div class="cdet">
+        <div class="cdet-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><div class="cdet-lbl">Call Richard Directly</div><div class="cdet-val"><a href="tel:2814682201">281.468.2201</a></div></div>
+      </div>
+      <div class="cdet">
+        <div class="cdet-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><div class="cdet-lbl">Email</div><div class="cdet-val"><a href="mailto:richierichtransportationllc@gmail.com">richierichtransportationllc@gmail.com</a></div></div>
+      </div>
+      <div class="cdet">
+        <div class="cdet-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><div class="cdet-lbl">Based In</div><div class="cdet-val">Tomball, Texas</div></div>
+      </div>
+      <div class="cdet">
+        <div class="cdet-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div>
+          <div class="cdet-lbl">Hours</div>
+          <div style="display:flex;flex-direction:column;gap:5px;margin-top:4px;">
+            <div style="display:flex;justify-content:space-between;font-size:.82rem;gap:1rem;"><span style="color:var(--gray);font-weight:500;">Mon – Fri</span><span style="font-weight:700;">6am – 8pm CT</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:.82rem;gap:1rem;"><span style="color:var(--gray);font-weight:500;">Saturday</span><span style="font-weight:700;">7am – 5pm CT</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:.82rem;gap:1rem;"><span style="color:var(--gray);font-weight:500;">Sunday</span><span style="font-weight:700;">By Appointment</span></div>
           </div>
         </div>
       </div>
@@ -759,24 +759,22 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
         <li><a href="#fleet">Blue Magic & Red Magic</a></li>
         <li><a href="#coverage">Coverage Area</a></li>
         <li><a href="#careers">Careers</a></li>
-        <li><a href="#contact">Get a Quote</a></li>
+        <li><a href="#quote">Get a Quote</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Contact & Credentials</h5>
+      <h5>Contact Information</h5>
       <ul>
         <li><a href="tel:2814682201">281.468.2201</a></li>
         <li><a href="mailto:richierichtransportationllc@gmail.com">richierichtransportationllc@gmail.com</a></li>
-        <li><a href="#">Tomball, Texas</a></li>
-        <li><a href="#">USDOT# 4024817</a></li>
-        <li><a href="#">TXDMV 009730224C</a></li>
-        <li><a href="#">Established 2021</a></li>
+        <li><a href="#contact">Tomball, Texas</a></li>
+        <li><a href="#contact">Established 2021</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <div>© 2025 RichieRich Transportation LLC — Tomball, TX. All rights reserved.</div>
-    <div class="footer-dot">USDOT 4024817</div>
   </div>
 </footer>
 
