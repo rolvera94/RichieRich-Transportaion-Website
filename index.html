@@ -31,9 +31,8 @@ body { font-family: 'Montserrat', sans-serif; color: var(--navy-dark); backgroun
 
 /* NAV */
 nav { background: var(--navy); height: 96px; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 999; box-shadow: 0 2px 24px rgba(0,0,0,.35); }
-.nav-logo { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
-.nav-logo-mark { height: 80px; width: auto; display: block; flex-shrink: 0; }
-.nav-logo-word { height: 32px; width: 380px; object-fit: cover; object-position: center 48%; display: block; flex-shrink: 0; }
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo-img { width: 420px; height: 50px; object-fit: cover; object-position: center; display: block; flex-shrink: 0; }
 .rr-svg { width: 48px; height: 48px; flex-shrink: 0; }
 .logo-name { font-size: 1rem; font-weight: 900; color: var(--cream); letter-spacing: 1.5px; line-height: 1.1; }
 .logo-name em { font-style: normal; color: var(--gold); }
@@ -230,8 +229,7 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
   section { padding: 4.75rem 1.75rem; }
   .about-grid, .bio-inner, .cov-inner, .hire-inner, .contact-wrap { gap: 3rem; }
   nav { height: 84px; padding: 0 1.6rem; }
-  .nav-logo-mark { height: 68px; }
-  .nav-logo-word { width: 300px; height: 28px; }
+  .nav-logo-img { width: 350px; height: 42px; }
   .nav-links a { padding: .5rem .65rem; font-size: .68rem; }
   .hire-img { height: 380px; }
   .bio-photo { height: 400px; }
@@ -243,8 +241,7 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
   section { padding: 4rem 1.5rem; }
   .about-grid, .bio-inner, .cov-inner, .hire-inner, .contact-wrap, .fleet-grid, .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
   nav { height: 72px; padding: 0 1.2rem; }
-  .nav-logo-mark { height: 56px; }
-  .nav-logo-word { width: 200px; height: 22px; }
+  .nav-logo-img { width: 260px; height: 32px; }
   .nav-toggle { display: block; }
   .nav-cta { display: none; }
   .nav-links {
@@ -292,9 +289,7 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
   footer { padding: 2.75rem 1.25rem 1.75rem; }
   .footer-bottom { justify-content: flex-start; }
   nav { height: 62px; }
-  .nav-logo { gap: .55rem; }
-  .nav-logo-mark { height: 46px; }
-  .nav-logo-word { width: 150px; height: 17px; }
+  .nav-logo-img { width: 200px; height: 26px; }
   .nav-links { top: 62px; }
 }
 </style>
@@ -313,8 +308,7 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
 <!-- NAV -->
 <nav>
   <a href="#home" class="nav-logo" aria-label="RichieRich Transportation LLC">
-    <img class="nav-logo-mark" src="images/Gold%20RR%20Logo%20Only.png" alt="" />
-    <img class="nav-logo-word" src="images/RichieRich%20Logo.png" alt="RichieRich Transportation LLC" />
+    <img class="nav-logo-img" src="images/RR%20Gold%20Single%20Line%20Logo.png" alt="RichieRich Transportation LLC" />
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -739,9 +733,8 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); paddin
 <footer>
   <div class="footer-top">
     <div>
-      <a href="#home" class="nav-logo" style="display:inline-flex;align-items:center;gap:1.1rem;" aria-label="RichieRich Transportation LLC">
-        <img src="images/Gold%20RR%20Logo%20Only.png" alt="" style="height:110px;width:auto;display:block;flex-shrink:0;" />
-        <img src="images/RichieRich%20Logo.png" alt="RichieRich Transportation LLC" style="width:360px;height:38px;object-fit:cover;object-position:center 48%;display:block;flex-shrink:0;" />
+      <a href="#home" class="nav-logo" style="display:inline-flex;" aria-label="RichieRich Transportation LLC">
+        <img src="images/RR%20Gold%20Single%20Line%20Logo.png" alt="RichieRich Transportation LLC" style="width:460px;height:55px;object-fit:cover;object-position:center;display:block;" />
       </a>
       <p class="footer-brand-desc">Owner-operated flatbed carrier based in Tomball, TX. Founded December 2021 by Richard Olvera Sr. — Houston born, road proven. Built on family. Driven by integrity.</p>
     </div>
