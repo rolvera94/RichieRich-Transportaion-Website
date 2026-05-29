@@ -1,45 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>RichieRich Transportation LLC | Tomball, TX | Flatbed Carrier</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
-<style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --navy:      #1C2E4A;
-  --navy-dark: #101E30;
-  --navy-mid:  #243650;
-  --gold:      #C8A84B;
-  --gold-lt:   #E5C76A;
-  --cream:     #F2EDD8;
-  --cream-lt:  #FAF8F2;
-  --white:     #FFFFFF;
-  --gray:      #6B7280;
-  --lgray:     #F3F4F6;
-  --red:       #B83228;
+  /* Unified Luxury Brand Palette */
+  --navy:      #121F32; /* Core Brand Dark - sleek and deep */
+  --navy-dark: #0A1320; /* Deepest structural dark for absolute contrast */
+  --navy-mid:  #1A2B44; /* Interactive element hover states */
+  --gold:      #C8A84B; /* Heritage metallic gold accent */
+  --gold-lt:   #E5C76A; /* High-visibility gold highlight */
+  --cream:     #F4EFEB; /* Soft warmth for dark mode text accents */
+  --cream-lt:  #F9F7F3; /* Bright, clean warm-white canvas background */
+  --white:     #FFFFFF; /* Pure structural white */
+  --gray:      #525F73; /* Refined neutral grey for modern readability */
+  --lgray:     #EDEFF2; /* Light cool grey structural accents */
+  --red:       #B83228; /* High-priority tag warning accent */
 }
-html { scroll-behavior: smooth; scroll-padding-top: 108px; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 body { font-family: 'Montserrat', sans-serif; color: var(--navy-dark); background: var(--white); overflow-x: hidden; }
 
 /* TOP BAR */
-.topbar { background: var(--navy-dark); color: var(--cream); font-size: .86rem; font-weight: 600; letter-spacing: .3px; padding: .7rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .4rem; }
+.topbar { background: var(--navy-dark); color: var(--cream); font-size: .86rem; font-weight: 600; letter-spacing: .3px; padding: .7rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .4rem; border-bottom: 1px solid rgba(255,255,255,.03); }
 .topbar a { color: var(--gold); text-decoration: none; }
 .tb-r { display: flex; gap: 1.8rem; }
-.tb-r span { color: rgba(242,237,216,.4); margin-right: .3rem; }
+.tb-r span { color: rgba(244,239,235,.4); margin-right: .3rem; }
 
-/* NAV */
-nav { background: #132744; height: 100px; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 999; box-shadow: 0 2px 24px rgba(0,0,0,.35); }
+/* NAV - Now perfectly matching the Topbar & Hero Flow */
+nav { background: var(--navy-dark); height: 100px; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 999; box-shadow: 0 4px 30px rgba(0,0,0,.15); }
 .nav-logo { display: flex; align-items: center; text-decoration: none; }
 .nav-logo-img { width: 600px; height: 68px; object-fit: cover; object-position: center 53%; display: block; flex-shrink: 0; }
 .rr-svg { width: 48px; height: 48px; flex-shrink: 0; }
 .logo-name { font-size: 1rem; font-weight: 900; color: var(--cream); letter-spacing: 1.5px; line-height: 1.1; }
 .logo-name em { font-style: normal; color: var(--gold); }
-.logo-sub { font-size: .58rem; font-weight: 600; color: rgba(242,237,216,.4); letter-spacing: 2.5px; text-transform: uppercase; margin-top: 2px; }
+.logo-sub { font-size: .58rem; font-weight: 600; color: rgba(244,239,235,.4); letter-spacing: 2.5px; text-transform: uppercase; margin-top: 2px; }
 .nav-links { display: flex; gap: 0; list-style: none; }
 .nav-links li.mobile-cta { display: none; }
-.nav-links a { color: rgba(242,237,216,.72); text-decoration: none; font-size: .82rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; padding: .55rem .95rem; transition: color .2s; }
+.nav-links a { color: rgba(244,239,235,.75); text-decoration: none; font-size: .82rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; padding: .55rem .95rem; transition: color .2s; }
 .nav-links a:hover { color: var(--gold); }
 .nav-cta { background: var(--gold); color: var(--navy-dark); border: none; padding: .72rem 1.6rem; font-family: 'Montserrat',sans-serif; font-size: .82rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: background .2s, transform .15s; }
 .nav-cta:hover { background: var(--gold-lt); transform: translateY(-1px); }
@@ -49,31 +42,31 @@ nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg
 nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
 nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* HERO */
+/* HERO - Utilizing full deep dark with modern overlay saturation */
 .hero { min-height: 100vh; background: var(--navy-dark); position: relative; display: flex; align-items: center; overflow: hidden; }
-.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: .3; filter: saturate(.6); }
-.hero-grad { position: absolute; inset: 0; background: linear-gradient(90deg, var(--navy-dark) 40%, rgba(16,30,48,.7) 65%, rgba(16,30,48,.15) 100%); }
+.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: .22; filter: saturate(.4); }
+.hero-grad { position: absolute; inset: 0; background: linear-gradient(90deg, var(--navy-dark) 45%, rgba(10,19,32,.75) 70%, rgba(10,19,32,.2) 100%); }
 .hero-content { position: relative; z-index: 2; padding: 7rem 5vw 6rem; max-width: 740px; }
 .eyebrow { display: flex; align-items: center; gap: .7rem; margin-bottom: 1.4rem; }
 .ebar { width: 32px; height: 2px; background: var(--gold); }
 .etxt { font-size: .66rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
 .hero h1 { font-size: clamp(2.8rem,6vw,5rem); font-weight: 900; color: var(--white); line-height: 1.07; letter-spacing: -.5px; margin-bottom: 1.5rem; }
 .hero h1 span { color: var(--gold); }
-.hero-p { font-size: 1.08rem; color: rgba(242,237,216,.72); line-height: 1.85; max-width: 540px; margin-bottom: 2.6rem; }
+.hero-p { font-size: 1.08rem; color: rgba(244,239,235,.8); line-height: 1.85; max-width: 540px; margin-bottom: 2.6rem; }
 .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
 .btn-gold { background: var(--gold); color: var(--navy-dark); padding: .88rem 2.2rem; font-family: 'Montserrat',sans-serif; font-weight: 800; font-size: .78rem; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; cursor: pointer; transition: background .2s, transform .15s; }
 .btn-gold:hover { background: var(--gold-lt); transform: translateY(-2px); }
-.btn-ghost { border: 1.5px solid rgba(242,237,216,.28); color: var(--cream); padding: .88rem 2.2rem; font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: .78rem; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: border-color .2s, color .2s; }
+.btn-ghost { border: 1.5px solid rgba(244,239,235,.3); color: var(--cream); padding: .88rem 2.2rem; font-family: 'Montserrat',sans-serif; font-weight: 700; font-size: .78rem; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: border-color .2s, color .2s; }
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-.hero-stats { display: flex; gap: 2.5rem; border-top: 1px solid rgba(242,237,216,.1); padding-top: 2rem; flex-wrap: wrap; }
+.hero-stats { display: flex; gap: 2.5rem; border-top: 1px solid rgba(244,239,235,.15); padding-top: 2rem; flex-wrap: wrap; }
 .hstat-num { font-size: 1.9rem; font-weight: 900; color: var(--gold); line-height: 1; letter-spacing: -1px; }
-.hstat-lbl { font-size: .6rem; font-weight: 600; color: rgba(242,237,216,.42); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 4px; }
+.hstat-lbl { font-size: .6rem; font-weight: 600; color: rgba(244,239,235,.5); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 4px; }
 
 /* TRUST BAR */
 .trust-bar { background: var(--gold); padding: 1.1rem 2rem; display: flex; justify-content: center; gap: 2.75rem; flex-wrap: wrap; align-items: center; }
 .trust-item { display: flex; align-items: center; gap: .55rem; font-size: .85rem; font-weight: 800; color: var(--navy-dark); letter-spacing: 1.2px; text-transform: uppercase; }
 
-/* SHARED SECTION */
+/* SHARED SECTION SETUP */
 section { padding: 7rem 2rem; }
 .container { max-width: 1140px; margin: 0 auto; }
 .sec-eyebrow { display: flex; align-items: center; gap: .7rem; margin-bottom: .8rem; }
@@ -82,17 +75,17 @@ section { padding: 7rem 2rem; }
 .sec-title { font-size: clamp(2.1rem,3.4vw,3rem); font-weight: 900; color: var(--navy-dark); line-height: 1.12; letter-spacing: -.4px; margin-bottom: 1.1rem; }
 .sec-title.lt { color: var(--white); }
 .sec-sub { font-size: 1.04rem; color: var(--gray); line-height: 1.8; max-width: 620px; margin-bottom: 3rem; }
-.sec-sub.lt { color: rgba(242,237,216,.58); }
+.sec-sub.lt { color: rgba(244,239,235,.65); }
 
-/* ABOUT */
+/* ABOUT - Elegant Warm Accent Canvas Background */
 .about-bg { background: var(--cream-lt); }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
 .img-stack { position: relative; padding-bottom: 60px; }
-.img-main { width: 100%; height: 380px; object-fit: cover; display: block; box-shadow: 0 20px 60px rgba(28,46,74,.16); }
-.img-pip { position: absolute; bottom: 0; right: -24px; width: 52%; height: 200px; object-fit: cover; border: 4px solid var(--white); box-shadow: 0 10px 40px rgba(28,46,74,.18); }
+.img-main { width: 100%; height: 380px; object-fit: cover; display: block; box-shadow: 0 20px 60px rgba(10,19,32,.12); }
+.img-pip { position: absolute; bottom: 0; right: -24px; width: 52%; height: 200px; object-fit: cover; border: 4px solid var(--white); box-shadow: 0 10px 40px rgba(10,19,32,.15); }
 .dot-badge { position: absolute; top: -16px; left: 16px; background: var(--navy); color: var(--cream); padding: .52rem 1rem; font-size: .6rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
 .dot-badge strong { color: var(--gold); font-size: .88rem; display: block; letter-spacing: 0; }
-.founded-pill { display: inline-flex; align-items: center; gap: .5rem; background: rgba(200,168,75,.1); border: 1px solid rgba(200,168,75,.3); padding: .4rem .9rem; margin-bottom: 1.5rem; }
+.founded-pill { display: inline-flex; align-items: center; gap: .5rem; background: rgba(200,168,75,.08); border: 1px solid rgba(200,168,75,.25); padding: .4rem .9rem; margin-bottom: 1.5rem; }
 .founded-pill span { font-size: .65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); }
 .about-points { display: flex; flex-direction: column; gap: 1.35rem; margin-top: .5rem; }
 .apoint { display: flex; gap: 1rem; align-items: flex-start; }
@@ -101,47 +94,46 @@ section { padding: 7rem 2rem; }
 .apoint h4 { font-size: .88rem; font-weight: 800; color: var(--navy-dark); margin-bottom: .22rem; }
 .apoint p { font-size: .92rem; color: var(--gray); line-height: 1.7; }
 
-/* RICHARD BIO */
-.bio-bg { background: var(--navy-dark); }
+/* RICHARD BIO - Transitioning smoothly to Core Navy */
+.bio-bg { background: var(--navy); }
 .bio-inner { display: grid; grid-template-columns: 1fr 1.65fr; gap: 5rem; align-items: center; }
 .bio-photo-wrap { position: relative; }
 .bio-photo { width: 100%; height: 440px; object-fit: cover; object-position: center; display: block; }
 .bio-stripe { position: absolute; bottom: 0; left: 0; right: 0; background: var(--gold); padding: 1rem 1.4rem; }
 .bio-stripe-name { font-size: 1rem; font-weight: 900; color: var(--navy-dark); }
-.bio-stripe-title { font-size: .62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(16,30,48,.65); margin-top: 2px; }
+.bio-stripe-title { font-size: .62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(10,19,32,.65); margin-top: 2px; }
 .bio-quote { font-family: 'Playfair Display',serif; font-style: italic; font-size: clamp(1.2rem,2.2vw,1.75rem); color: var(--cream); line-height: 1.55; margin-bottom: 1.8rem; border-left: 3px solid var(--gold); padding-left: 1.5rem; }
-.bio-text { font-size: .98rem; color: rgba(242,237,216,.62); line-height: 1.9; margin-bottom: 1.4rem; }
+.bio-text { font-size: .98rem; color: rgba(244,239,235,.68); line-height: 1.9; margin-bottom: 1.4rem; }
 .bio-facts { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; margin-top: 1.2rem; }
-.bio-fact { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); padding: .9rem 1.1rem; }
-.bf-label { font-size: .58rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(242,237,216,.35); margin-bottom: 3px; }
+.bio-fact { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); padding: .9rem 1.1rem; }
+.bf-label { font-size: .58rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(244,239,235,.35); margin-bottom: 3px; }
 .bf-value { font-size: .86rem; font-weight: 700; color: var(--gold); }
 .bio-media { display: flex; flex-direction: column; gap: 1.2rem; }
 .bio-media .bio-photo { height: 340px; }
-.houston-slider { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #000; box-shadow: 0 12px 32px rgba(0,0,0,.35); }
+.houston-slider { position: relative; aspect-ratio: 16/9; overflow: hidden; background: #000; box-shadow: 0 12px 32px rgba(0,0,0,.3); }
 .houston-track { position: relative; width: 100%; height: 100%; }
 .houston-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .8s ease; }
 .houston-slide.active { opacity: 1; }
-.houston-caption { position: absolute; top: .8rem; left: .8rem; background: rgba(16,30,48,.78); color: var(--gold); font-size: .6rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: .35rem .75rem; }
+.houston-caption { position: absolute; top: .8rem; left: .8rem; background: rgba(10,19,32,.8); color: var(--gold); font-size: .6rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: .35rem .75rem; }
 .houston-dots { position: absolute; bottom: .8rem; left: 50%; transform: translateX(-50%); display: flex; gap: .45rem; }
 .hdot { width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,.4); cursor: pointer; padding: 0; transition: background .2s, transform .2s; }
 .hdot.active { background: var(--gold); transform: scale(1.3); }
 
-/* SERVICES */
+/* SERVICES - Deep Structural Dark for clean card contrast */
 .svc-bg { background: var(--navy-dark); }
-.svc-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(255px,1fr)); gap: 1px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.06); }
+.svc-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(255px,1fr)); gap: 1px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.05); }
 .svc-card { background: var(--navy-dark); padding: 2.5rem 2rem; position: relative; transition: background .25s; }
 .svc-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
 .svc-card:hover { background: var(--navy-mid); }
 .svc-card:hover::after { transform: scaleX(1); }
-.svc-icon { width: 48px; height: 48px; background: rgba(200,168,75,.1); border: 1px solid rgba(200,168,75,.2); display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; }
+.svc-icon { width: 48px; height: 48px; background: rgba(200,168,75,.08); border: 1px solid rgba(200,168,75,.15); display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; }
 .svc-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .svc-card h3 { font-size: .95rem; font-weight: 800; color: var(--white); margin-bottom: .6rem; }
-.svc-card p { font-size: .94rem; color: rgba(242,237,216,.55); line-height: 1.75; }
+.svc-card p { font-size: .94rem; color: rgba(244,239,235,.55); line-height: 1.75; }
 
-/* FLEET */
+/* FLEET - Clean Light Slate Canvas */
 .fleet-bg { background: var(--lgray); }
-.fleet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-.fleet-card { background: var(--white); overflow: hidden; box-shadow: 0 4px 28px rgba(28,46,74,.09); }
+.fleet-card { background: var(--white); overflow: hidden; box-shadow: 0 10px 40px rgba(10,19,32,.06); border: 1px solid rgba(0,0,0,.03); }
 .fleet-img-wrap { position: relative; height: 290px; overflow: hidden; }
 .fleet-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
 .fleet-card:hover .fleet-img-wrap img { transform: scale(1.04); }
@@ -155,35 +147,35 @@ section { padding: 7rem 2rem; }
 .fleet-tags { display: flex; flex-wrap: wrap; gap: .45rem; }
 .fleet-tag { background: var(--lgray); color: var(--navy); font-size: .6rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: .28rem .7rem; }
 
-/* COVERAGE */
+/* COVERAGE - Transitioning back to Core Navy */
 .cov-bg { background: var(--navy); }
 .cov-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-.states-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.07); margin-top: 1rem; }
+.states-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.06); margin-top: 1rem; }
 .state-cell { background: var(--navy); padding: 1.1rem 1rem; text-align: center; transition: background .2s; }
 .state-cell:hover { background: var(--navy-mid); }
 .state-name { font-size: .8rem; font-weight: 700; color: var(--cream); }
-.state-role { font-size: .56rem; color: rgba(242,237,216,.32); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
+.state-role { font-size: .56rem; color: rgba(244,239,235,.35); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
 .creds { display: flex; flex-direction: column; gap: .85rem; margin-top: 1.4rem; }
-.cred { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); padding: .85rem 1.2rem; }
-.cred-lbl { font-size: .58rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(242,237,216,.35); margin-bottom: 3px; }
+.cred { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); padding: .85rem 1.2rem; }
+.cred-lbl { font-size: .58rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(244,239,235,.35); margin-bottom: 3px; }
 .cred-val { font-size: .88rem; font-weight: 700; color: var(--gold); }
 
-/* HIRING */
+/* HIRING & CONTACT - Beautiful Light Canvas Finish */
 .hire-bg { background: var(--cream-lt); }
 .hire-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-.hire-img { width: 100%; height: 440px; object-fit: cover; display: block; box-shadow: 0 16px 50px rgba(28,46,74,.14); }
+.hire-img { width: 100%; height: 440px; object-fit: cover; display: block; box-shadow: 0 16px 50px rgba(10,19,32,.1); }
 .hire-alert { background: var(--navy-dark); color: var(--cream); padding: 1.2rem 1.4rem; margin-bottom: 1.8rem; border-left: 4px solid var(--gold); display: flex; gap: .75rem; align-items: flex-start; }
-.hire-alert p { font-size: .83rem; line-height: 1.65; color: rgba(242,237,216,.75); }
+.hire-alert p { font-size: .83rem; line-height: 1.65; color: rgba(244,239,235,.75); }
 .hire-alert strong { color: var(--gold); display: block; font-size: .68rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: .3rem; }
-.apply-wrap { margin-top: 4rem; background: #fff; padding: 2.5rem; border-top: 4px solid var(--gold); box-shadow: 0 16px 50px rgba(28,46,74,.10); }
-.apply-head { margin-bottom: 2rem; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(28,46,74,.10); }
+.apply-wrap { margin-top: 4rem; background: #fff; padding: 2.5rem; border-top: 4px solid var(--gold); box-shadow: 0 16px 50px rgba(10,19,32,.06); }
+.apply-head { margin-bottom: 2rem; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(10,19,32,.08); }
 .apply-head h3 { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--navy-dark); margin-bottom: .5rem; }
 .apply-head p { font-size: .88rem; color: var(--gray); line-height: 1.7; }
 .apply-head a { color: var(--navy); font-weight: 700; }
 #apply-success { display: none; background: #1f6f3f; color: #fff; padding: .9rem 1.1rem; font-size: .85rem; font-weight: 600; margin-top: 1rem; }
 #apply-success.show { display: block; }
 .req-list { display: flex; flex-direction: column; gap: .75rem; margin-bottom: 2rem; }
-.req-item { display: flex; align-items: center; gap: .9rem; padding: .88rem 1.2rem; background: var(--white); border: 1px solid #E8E2D0; }
+.req-item { display: flex; align-items: center; gap: .9rem; padding: .88rem 1.2rem; background: var(--white); border: 1px solid #E5DFD0; }
 .req-check { width: 28px; height: 28px; min-width: 28px; background: var(--navy); display: flex; align-items: center; justify-content: center; }
 .req-check svg { width: 13px; height: 13px; stroke: var(--gold); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
 .req-item span { font-size: .84rem; font-weight: 700; color: var(--navy-dark); }
@@ -194,11 +186,11 @@ section { padding: 7rem 2rem; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
 .fg { display: flex; flex-direction: column; gap: .32rem; }
 .fg label { font-size: .62rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); }
-.fg input, .fg select, .fg textarea { background: var(--cream-lt); border: 1.5px solid #DDD8C8; color: var(--navy-dark); padding: .76rem 1rem; font-family: 'Montserrat',sans-serif; font-size: .85rem; font-weight: 500; outline: none; transition: border-color .2s; width: 100%; appearance: none; border-radius: 0; }
+.fg input, .fg select, .fg textarea { background: var(--cream-lt); border: 1.5px solid #D6CFC1; color: var(--navy-dark); padding: .76rem 1rem; font-family: 'Montserrat',sans-serif; font-size: .85rem; font-weight: 500; outline: none; transition: border-color .2s; width: 100%; appearance: none; border-radius: 0; }
 .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--navy); }
 .fg textarea { min-height: 110px; resize: vertical; }
 .contact-details { display: flex; flex-direction: column; }
-.cdet { display: flex; gap: 1.2rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px solid #EDE8DA; }
+.cdet { display: flex; gap: 1.2rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px solid #ECE7DB; }
 .cdet:first-child { padding-top: 0; }
 .cdet:last-child { border-bottom: none; }
 .cdet-icon { width: 44px; height: 44px; min-width: 44px; background: var(--navy); display: flex; align-items: center; justify-content: center; }
@@ -209,580 +201,13 @@ section { padding: 7rem 2rem; }
 .cdet-val a:hover { color: var(--gold); }
 #form-success { display: none; background: #d4edda; color: #155724; padding: .78rem 1rem; font-size: .8rem; font-weight: 700; border-left: 3px solid #28a745; margin-top: .5rem; }
 
-/* FOOTER */
-footer { background: #132744; border-top: 3px solid var(--gold); padding: 5.5rem 2rem 3rem; }
-.footer-top { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 4.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid rgba(255,255,255,.07); margin-bottom: 2.5rem; }
-.footer-brand-desc { font-size: .88rem; color: rgba(242,237,216,.45); line-height: 1.9; margin-top: 1.4rem; max-width: 320px; }
+/* FOOTER - Matching Navigation Dark Base */
+footer { background: var(--navy-dark); border-top: 3px solid var(--gold); padding: 5.5rem 2rem 3rem; }
+.footer-top { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 4.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid rgba(255,255,255,.05); margin-bottom: 2.5rem; }
+.footer-brand-desc { font-size: .88rem; color: rgba(244,239,235,.45); line-height: 1.9; margin-top: 1.4rem; max-width: 320px; }
 .footer-col h5 { font-size: .68rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .85rem; }
-.footer-col ul li a { color: rgba(242,237,216,.55); text-decoration: none; font-size: .88rem; font-weight: 500; transition: color .2s; }
+.footer-col ul li a { color: rgba(244,239,235,.6); text-decoration: none; font-size: .88rem; font-weight: 500; transition: color .2s; }
 .footer-col ul li a:hover { color: var(--gold); }
-.footer-bottom { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; font-size: .74rem; color: rgba(242,237,216,.32); padding-top: .5rem; }
-.footer-dot { background: rgba(200,168,75,.1); color: var(--gold); font-size: .6rem; font-weight: 700; letter-spacing: 1.5px; padding: .22rem .7rem; }
-
-/* ANIMATIONS */
-.fade { opacity: 0; transform: translateY(26px); transition: opacity .65s ease, transform .65s ease; }
-.fade.in { opacity: 1; transform: none; }
-
-/* TABLET */
-@media (max-width: 1024px) {
-  section { padding: 5.5rem 1.75rem; }
-  .about-grid, .bio-inner, .cov-inner, .hire-inner, .contact-wrap { gap: 3.5rem; }
-  nav { height: 90px; padding: 0 1.6rem; }
-  .nav-logo-img { width: 500px; height: 58px; }
-  .nav-links a { padding: .5rem .7rem; font-size: .72rem; }
-  .hire-img { height: 380px; }
-  .bio-photo { height: 400px; }
-  .img-main { height: 340px; }
-}
-
-/* MOBILE */
-@media (max-width: 820px) {
-  section { padding: 4.5rem 1.5rem; }
-  .about-grid, .bio-inner, .cov-inner, .hire-inner, .contact-wrap, .fleet-grid, .footer-top { grid-template-columns: 1fr; gap: 2.75rem; }
-  nav { height: 78px; padding: 0 1.2rem; }
-  .nav-logo-img { width: 360px; height: 42px; }
-  .nav-toggle { display: block; }
-  .nav-cta { display: none; }
-  .nav-links {
-    display: flex; flex-direction: column; gap: 0;
-    position: absolute; top: 78px; left: 0; right: 0;
-    background: var(--navy-dark);
-    border-top: 1px solid rgba(255,255,255,.06);
-    box-shadow: 0 14px 30px rgba(0,0,0,.45);
-    max-height: 0; overflow: hidden;
-    transition: max-height .3s ease;
-  }
-  nav.open .nav-links { max-height: 560px; }
-  .nav-links li { width: 100%; }
-  .nav-links li.mobile-cta { display: list-item; }
-  .nav-links a { display: block; padding: 1.05rem 1.4rem; font-size: .82rem; border-bottom: 1px solid rgba(255,255,255,.05); }
-  .nav-links li.mobile-cta a { background: var(--gold); color: var(--navy-dark); font-weight: 800; }
-  .hero { min-height: 88vh; }
-  .hero-content { padding: 4.5rem 1.5rem 3.5rem; }
-  .img-pip { display: none; } .img-stack { padding-bottom: 0; }
-  .img-main { height: 280px; }
-  .bio-photo { height: 360px; }
-  .bio-facts { grid-template-columns: 1fr; }
-  .bio-quote { padding-left: 1rem; }
-  .states-grid { grid-template-columns: repeat(2,1fr); }
-  .fleet-img-wrap { height: 240px; }
-  .fleet-body { padding: 1.4rem 1.5rem; }
-  .hire-img { height: 300px; }
-  .form-row { grid-template-columns: 1fr; }
-  .apply-wrap { padding: 1.75rem 1.25rem; margin-top: 2.5rem; }
-  .topbar { flex-direction: column; gap: .3rem; font-size: .78rem; padding: .6rem 1rem; }
-  .tb-r { flex-wrap: wrap; justify-content: center; gap: .75rem 1rem; }
-  .footer-top { grid-template-columns: 1fr; gap: 2.75rem; padding-bottom: 2.75rem; }
-  .cdet-val, .cdet-val a, .footer-brand-desc, .topbar a { overflow-wrap: anywhere; word-break: break-word; }
-}
-
-/* SMALL PHONE */
-@media (max-width: 480px) {
-  section { padding: 3.75rem 1.1rem; }
-  .hero-content { padding: 3.5rem 1.1rem 2.75rem; }
-  .hero-btns { gap: .6rem; }
-  .btn-gold, .btn-ghost { padding: .82rem 1.5rem; font-size: .74rem; }
-  .hero-stats { gap: 1.4rem 2rem; }
-  .trust-bar { gap: 1.2rem; padding: 1rem 1rem; }
-  .footer-top { gap: 1.6rem; }
-  footer { padding: 4rem 1.25rem 2rem; }
-  .footer-bottom { justify-content: flex-start; }
-  nav { height: 68px; }
-  .nav-logo-img { width: 280px; height: 32px; }
-  .nav-links { top: 68px; }
-}
-</style>
-</head>
-<body>
-
-<!-- TOP BAR -->
-<div class="topbar">
-  <div>📍 Tomball, TX &nbsp;·&nbsp; EST. 2021</div>
-  <div class="tb-r">
-    <div><span>📞</span><a href="tel:2814682201">281.468.2201</a></div>
-    <div><span>✉</span><a href="mailto:richierichtransportationllc@gmail.com">richierichtransportationllc@gmail.com</a></div>
-  </div>
-</div>
-
-<!-- NAV -->
-<nav>
-  <a href="#home" class="nav-logo" aria-label="RichieRich Transportation LLC">
-    <img class="nav-logo-img" src="images/RR%20Blue.png" alt="RichieRich Transportation LLC" />
-  </a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#richard">Our Story</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#fleet">Fleet</a></li>
-    <li><a href="#careers">Careers</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li class="mobile-cta"><a href="#quote">Get a Quote</a></li>
-  </ul>
-  <a href="#quote" class="nav-cta">Get a Quote</a>
-  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <img class="hero-photo" src="images/Blue%20Truck%20Loaded.jfif" alt="Blue Magic — RichieRich Transportation flatbed on location" />
-  <div class="hero-grad"></div>
-  <div class="hero-content">
-    <h1>Freight Delivered.<br/><span>On Time.</span> Every Time.</h1>
-    <p class="hero-p">RichieRich Transportation LLC is a Tomball-based, owner-operated flatbed carrier built on family, hard work, and a handshake promise. One standard. Your load is our reputation.</p>
-    <div class="hero-btns">
-      <a href="#quote" class="btn-gold">Request a Quote</a>
-      <a href="#fleet" class="btn-ghost">Meet the Fleet ↓</a>
-    </div>
-    <div class="hero-stats">
-      <div><div class="hstat-num">2021</div><div class="hstat-lbl">Founded</div></div>
-      <div><div class="hstat-num">FTL</div><div class="hstat-lbl">Flatbed Specialist</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-item">✓ USDOT Registered</div>
-  <div class="trust-item">✓ Fully Insured</div>
-  <div class="trust-item">✓ Flatbed Specialist</div>
-  <div class="trust-item">✓ Owner-Operated</div>
-</div>
-
-<!-- ABOUT -->
-<section class="about-bg" id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="img-stack fade">
-        <img class="img-main" src="images/Blue%20Truck%20Loaded.jfif" alt="Blue Magic Freightliner Cascadia flatbed" />
-        <img class="img-pip" src="images/Red%20Truck%20Loaded.jfif" alt="Red Magic loaded with lumber" />
-      </div>
-      <div class="fade">
-        <div class="founded-pill"><span>⚑ Founded December 2021 — Tomball, TX</span></div>
-        <div class="sec-eyebrow"><div class="sec-bar"></div><div class="sec-tag">Who We Are</div></div>
-        <h2 class="sec-title">Owner-Operated.<br/>Personally Committed.</h2>
-        <p class="sec-sub" style="margin-bottom:1.8rem;">RichieRich Transportation LLC was built from the road up right here in Tomball, Texas. One mission — deliver with integrity. When you call us, you talk to the owner. No middlemen, no runaround. Just results.</p>
-        <div class="about-points">
-          <div class="apoint">
-            <div class="aicon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-            <div><h4>Call the Owner Directly</h4><p>Dial 281.468.2201 and Richard picks up. Real answers, real fast — no dispatch, no hold music.</p></div>
-          </div>
-          <div class="apoint">
-            <div class="aicon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <div><h4>Fully Insured & DOT Compliant</h4><p>Licensed, insured, and compliant with all federal DOT regulations. Your cargo is protected every mile.</p></div>
-          </div>
-          <div class="apoint">
-            <div class="aicon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <div><h4>Built on Word of Mouth</h4><p>Every client came from a referral. That's the highest standard in this business — and we protect it with every load.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RICHARD'S STORY -->
-<section class="bio-bg" id="richard">
-  <div class="container">
-    <div class="bio-inner">
-      <div class="fade">
-        <div class="bio-media">
-          <div class="houston-slider" aria-label="Houston, Texas">
-            <div class="houston-track">
-              <img class="houston-slide active" src="images/Hosuton.jfif" alt="Houston skyline" />
-              <img class="houston-slide" src="images/Texans%20Stadium.jpg" alt="NRG Stadium — home of the Houston Texans" />
-              <img class="houston-slide" src="images/Toyota%20Center.jpg" alt="Toyota Center — home of the Houston Rockets" />
-            </div>
-            <div class="houston-caption">📍 Houston, Texas — Richard's Hometown</div>
-            <div class="houston-dots">
-              <button class="hdot active" data-i="0" aria-label="Slide 1"></button>
-              <button class="hdot" data-i="1" aria-label="Slide 2"></button>
-              <button class="hdot" data-i="2" aria-label="Slide 3"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="fade">
-        <div class="sec-eyebrow"><div class="sec-bar"></div><div class="sec-tag">Our Story</div></div>
-        <h2 class="sec-title lt">Houston Born.<br/>Road Proven.</h2>
-        <div class="bio-quote">"My name is on the door. My family is riding on every load I deliver. That's why I never cut corners."</div>
-        <p class="bio-text">Richard Olvera Sr. was born and raised in Houston, Texas. A loving, hard-working man with one driving force — to build something real for his family. In December 2021, he made it official: RichieRich Transportation LLC was open for business.</p>
-        <p class="bio-text">Starting with one truck and a reputation earned mile by mile, Richard built his business the old-fashioned way — by showing up, delivering on time, and never putting anything above his word. Today he runs his operation out of Tomball, TX, and every load still gets that same personal care it did on day one.</p>
-        <div class="bio-facts">
-          <div class="bio-fact"><div class="bf-label">Founded</div><div class="bf-value">December 2021</div></div>
-          <div class="bio-fact"><div class="bf-label">Hometown</div><div class="bf-value">Houston, Texas</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="svc-bg" id="services">
-  <div class="container">
-    <div class="sec-eyebrow"><div class="sec-bar"></div><div class="sec-tag fade">What We Haul</div></div>
-    <h2 class="sec-title lt fade">Freight Services</h2>
-    <p class="sec-sub lt fade">Flatbed specialists running Texas and the South. We move what matters — safely, on schedule, every time.</p>
-    <div class="svc-grid fade">
-      <div class="svc-card">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-        <h3>Flatbed Hauling</h3>
-        <p>Steel, lumber, heavy equipment, machinery — our specialty. If it rides on a flatbed, we haul it right.</p>
-      </div>
-      <div class="svc-card">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
-        <h3>Full Truckload (FTL)</h3>
-        <p>Dedicated runs. Your freight gets a full trailer and a direct route — no sharing, no delays.</p>
-      </div>
-      <div class="svc-card">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <h3>Regional & Long Haul</h3>
-        <p>Texas-based and running routes across the South. 2–3 day runs with the reliability you can plan around.</p>
-      </div>
-      <div class="svc-card">
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3>On-Time Delivery</h3>
-        <p>Owner-operated means accountability every step. You know when your load moves — and when it lands.</p>
-      </div>
-    </div>
-
-    <div class="creds fade" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.07);margin-top:2.5rem;">
-      <div class="cred" style="background:var(--navy-dark);text-align:center;padding:1.25rem 1rem;">
-        <div class="cred-lbl">USDOT Number</div>
-        <div class="cred-val">4024817</div>
-      </div>
-      <div class="cred" style="background:var(--navy-dark);text-align:center;padding:1.25rem 1rem;">
-        <div class="cred-lbl">TXDMV Registration</div>
-        <div class="cred-val">009730224C</div>
-      </div>
-      <div class="cred" style="background:var(--navy-dark);text-align:center;padding:1.25rem 1rem;">
-        <div class="cred-lbl">Business Type</div>
-        <div class="cred-val">Limited Liability Company (LLC)</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COVERAGE -->
-<section class="cov-bg" id="coverage">
-  <div class="container">
-    <div class="cov-inner">
-      <div class="fade">
-        <div class="sec-eyebrow"><div class="sec-bar"></div><div class="sec-tag">Where We Run</div></div>
-        <h2 class="sec-title lt">Service Coverage</h2>
-        <p class="sec-sub lt">Based in Tomball, TX — we run <strong style="color:var(--gold);font-weight:700;">local hauls and out-of-state long runs</strong>, throughout Texas and across the South. Call us to confirm availability for your specific route.</p>
-      </div>
-      <div class="fade">
-        <div class="states-grid">
-          <div class="state-cell"><div class="state-name">Texas</div><div class="state-role">Primary</div></div>
-          <div class="state-cell"><div class="state-name">Louisiana</div><div class="state-role">LA</div></div>
-          <div class="state-cell"><div class="state-name">Oklahoma</div><div class="state-role">OK</div></div>
-          <div class="state-cell"><div class="state-name">Arkansas</div><div class="state-role">AR</div></div>
-          <div class="state-cell"><div class="state-name">Mississippi</div><div class="state-role">MS</div></div>
-          <div class="state-cell"><div class="state-name">New Mexico</div><div class="state-role">NM</div></div>
-          <div class="state-cell"><div class="state-name">Tennessee</div><div class="state-role">TN</div></div>
-          <div class="state-cell"><div class="state-name">Alabama</div><div class="state-role">AL</div></div>
-          <div class="state-cell"><div class="state-name">& Beyond</div><div class="state-role">Call Us</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HIRING -->
-<section class="hire-bg" id="careers">
-  <div class="container">
-    <div class="sec-eyebrow"><div class="sec-bar"></div><div class="sec-tag fade">Join the Team</div></div>
-    <h2 class="sec-title fade">Careers</h2>
-    <p class="sec-sub fade">Driver, owner-operator, dispatch, maintenance — if you've got the chops and want to run with a tight family operation, apply below or call Richard at <a href="tel:2814682201" style="color:var(--navy);font-weight:800;">281.468.2201</a>.</p>
-    <div class="hire-inner" style="grid-template-columns:1fr;max-width:760px;">
-      <div class="fade">
-        <div class="hire-alert">
-          <div style="font-size:1.3rem;line-height:1;margin-top:1px;">⚠️</div>
-          <div><p><strong>Heads Up Before You Apply</strong>This is NOT a 9-to-5 job. You may be out on the road for 2–3 days at a time. If you're ready to work hard, run flatbed the right way, and be part of a real family operation — we want to hear from you.</p></div>
-        </div>
-        <p style="font-size:.86rem;color:var(--gray);line-height:1.8;margin-bottom:1.5rem;">RichieRich Transportation LLC is a tight operation and we only bring on drivers who meet the standard. Here's what we require for driving positions:</p>
-        <div class="req-list">
-          <div class="req-item">
-            <div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span>Valid CDL (Commercial Driver's License)</span>
-          </div>
-          <div class="req-item">
-            <div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span>Minimum 2 years flatbed experience</span>
-          </div>
-          <div class="req-item">
-            <div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span>2-year clean driving record required</span>
-          </div>
-          <div class="req-item">
-            <div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span>Valid TWIC Card required</span>
-          </div>
-        </div>
-        <a href="tel:2814682201" class="btn-gold" style="display:inline-block;">Call to Apply — 281.468.2201</a>
-      </div>
-    </div>
-
-    <div class="apply-wrap fade">
-      <div class="apply-head">
-        <h3>Apply Online</h3>
-        <p>Fill this out and Richard will reach out personally. Prefer to send a résumé? Email it to <a href="mailto:richierichtransportationllc@gmail.com">richierichtransportationllc@gmail.com</a>.</p>
-      </div>
-      <form class="contact-form" onsubmit="handleApplySubmit(event)">
-        <div class="form-row">
-          <div class="fg"><label>First Name</label><input type="text" placeholder="John" required /></div>
-          <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith" required /></div>
-        </div>
-        <div class="form-row">
-          <div class="fg"><label>Phone</label><input type="tel" placeholder="(555) 000-0000" required /></div>
-          <div class="fg"><label>Email</label><input type="email" placeholder="you@example.com" required /></div>
-        </div>
-        <div class="form-row">
-          <div class="fg">
-            <label>Position Applying For</label>
-            <select required>
-              <option value="">Select a position...</option>
-              <option>Flatbed Driver (CDL)</option>
-              <option>Owner-Operator</option>
-              <option>Dispatcher</option>
-              <option>Mechanic / Maintenance</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="fg"><label>City / State</label><input type="text" placeholder="Houston, TX" /></div>
-        </div>
-        <div class="form-row">
-          <div class="fg">
-            <label>Years of Driving Experience</label>
-            <select>
-              <option value="">Select...</option>
-              <option>Less than 1 year</option>
-              <option>1 – 2 years</option>
-              <option>2 – 5 years</option>
-              <option>5 – 10 years</option>
-              <option>10+ years</option>
-              <option>N/A (non-driving role)</option>
-            </select>
-          </div>
-          <div class="fg">
-            <label>CDL Class</label>
-            <select>
-              <option value="">Select...</option>
-              <option>Class A</option>
-              <option>Class B</option>
-              <option>Class C</option>
-              <option>None / Not Applicable</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="fg">
-            <label>TWIC Card</label>
-            <select>
-              <option value="">Select...</option>
-              <option>Yes, currently valid</option>
-              <option>Expired</option>
-              <option>No, but willing to obtain</option>
-              <option>No</option>
-            </select>
-          </div>
-          <div class="fg">
-            <label>Clean Driving Record (2+ yrs)</label>
-            <select>
-              <option value="">Select...</option>
-              <option>Yes</option>
-              <option>Mostly — minor incidents</option>
-              <option>No</option>
-              <option>N/A (non-driving role)</option>
-            </select>
-          </div>
-        </div>
-        <div class="fg"><label>Tell Us About Yourself</label><textarea placeholder="Previous companies, equipment you've run, why you want to join RichieRich..."></textarea></div>
-        <button type="submit" class="btn-gold" style="align-self:flex-start;">Submit Application →</button>
-        <div id="apply-success">✓ Application received! Richard will review and reach out to you directly.</div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="quote">
-  <div class="container">
-    <div class="sec-eyebrow"><div class="sec-bar"></div><div class="sec-tag fade">Let's Talk Freight</div></div>
-    <h2 class="sec-title fade">Request a Quote</h2>
-    <p class="sec-sub fade">Fill out the form or call Richard directly at <a href="tel:2814682201" style="color:var(--navy);font-weight:800;">281.468.2201</a>. We respond same day.</p>
-    <div class="contact-wrap" style="grid-template-columns:1fr;max-width:780px;">
-      <form class="contact-form fade" onsubmit="handleSubmit(event)">
-        <div class="form-row">
-          <div class="fg"><label>First Name</label><input type="text" placeholder="John" required /></div>
-          <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith" required /></div>
-        </div>
-        <div class="fg"><label>Company (optional)</label><input type="text" placeholder="Your company name" /></div>
-        <div class="form-row">
-          <div class="fg"><label>Phone</label><input type="tel" placeholder="(555) 000-0000" /></div>
-          <div class="fg"><label>Email</label><input type="email" placeholder="you@company.com" required /></div>
-        </div>
-        <div class="form-row">
-          <div class="fg"><label>Pickup Location</label><input type="text" placeholder="City, State" /></div>
-          <div class="fg"><label>Delivery Location</label><input type="text" placeholder="City, State" /></div>
-        </div>
-        <div class="fg">
-          <label>Service Needed</label>
-          <select>
-            <option value="">Select a service...</option>
-            <option>Flatbed Haul</option>
-            <option>Full Truckload (FTL)</option>
-            <option>Regional Run</option>
-            <option>Long Haul</option>
-            <option>Other / Not Sure</option>
-          </select>
-        </div>
-        <div class="fg"><label>Describe Your Load</label><textarea placeholder="Freight type, estimated weight, dimensions, preferred pickup date..."></textarea></div>
-        <button type="submit" class="btn-gold" style="align-self:flex-start;">Send Request →</button>
-        <div id="form-success">✓ Message received! Richard will be in touch with you shortly.</div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT INFORMATION -->
-<section id="contact" style="background:var(--cream-lt);">
-  <div class="container">
-    <div class="sec-eyebrow"><div class="sec-bar"></div><div class="sec-tag fade">Get In Touch</div></div>
-    <h2 class="sec-title fade">Contact Information</h2>
-    <p class="sec-sub fade">Reach Richard directly — phone, email, or stop in. We're easy to find and always glad to talk freight.</p>
-    <div class="contact-details fade" style="max-width:720px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 2.5rem;">
-      <div class="cdet">
-        <div class="cdet-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <div><div class="cdet-lbl">Call Richard Directly</div><div class="cdet-val"><a href="tel:2814682201">281.468.2201</a></div></div>
-      </div>
-      <div class="cdet">
-        <div class="cdet-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        <div><div class="cdet-lbl">Email</div><div class="cdet-val"><a href="mailto:richierichtransportationllc@gmail.com">richierichtransportationllc@gmail.com</a></div></div>
-      </div>
-      <div class="cdet">
-        <div class="cdet-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <div><div class="cdet-lbl">Based In</div><div class="cdet-val">Tomball, Texas</div></div>
-      </div>
-      <div class="cdet">
-        <div class="cdet-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-        <div>
-          <div class="cdet-lbl">Hours</div>
-          <div style="display:flex;flex-direction:column;gap:5px;margin-top:4px;">
-            <div style="display:flex;justify-content:space-between;font-size:.82rem;gap:1rem;"><span style="color:var(--gray);font-weight:500;">Mon – Fri</span><span style="font-weight:700;">6am – 8pm CT</span></div>
-            <div style="display:flex;justify-content:space-between;font-size:.82rem;gap:1rem;"><span style="color:var(--gray);font-weight:500;">Saturday</span><span style="font-weight:700;">7am – 5pm CT</span></div>
-            <div style="display:flex;justify-content:space-between;font-size:.82rem;gap:1rem;"><span style="color:var(--gray);font-weight:500;">Sunday</span><span style="font-weight:700;">By Appointment</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div>
-      <a href="#home" class="nav-logo" style="display:inline-flex;" aria-label="RichieRich Transportation LLC">
-        <img src="images/RR%20Blue.png" alt="RichieRich Transportation LLC" style="width:580px;max-width:100%;height:70px;object-fit:cover;object-position:center 53%;display:block;" />
-      </a>
-      <p class="footer-brand-desc">Owner-operated flatbed carrier based in Tomball, TX. Founded December 2021 by Richard Olvera Sr. — Houston born, road proven. Built on family. Driven by integrity.</p>
-    </div>
-    <div class="footer-col">
-      <h5>Navigation</h5>
-      <ul>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#richard">Our Story</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#fleet">Blue Magic & Red Magic</a></li>
-        <li><a href="#coverage">Coverage Area</a></li>
-        <li><a href="#careers">Careers</a></li>
-        <li><a href="#quote">Get a Quote</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Contact Information</h5>
-      <ul>
-        <li><a href="tel:2814682201">281.468.2201</a></li>
-        <li><a href="mailto:richierichtransportationllc@gmail.com">richierichtransportationllc@gmail.com</a></li>
-        <li><a href="#contact">Tomball, Texas</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div>© 2025 RichieRich Transportation LLC — Tomball, TX. All rights reserved.</div>
-  </div>
-</footer>
-
-<script>
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
-
-  (function mobileNav() {
-    const navEl = document.querySelector('nav');
-    const toggle = document.querySelector('.nav-toggle');
-    if (!navEl || !toggle) return;
-    toggle.addEventListener('click', () => {
-      const open = navEl.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    });
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      a.addEventListener('click', () => {
-        navEl.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Open menu');
-      });
-    });
-  })();
-
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const id = a.getAttribute('href').slice(1);
-      if (!id) return;
-      const target = document.getElementById(id);
-      if (!target) return;
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      history.replaceState(null, '', '#' + id);
-    });
-  });
-
-  (function houstonSlider() {
-    const slides = document.querySelectorAll('.houston-slide');
-    const dots = document.querySelectorAll('.hdot');
-    if (!slides.length) return;
-    let i = 0;
-    const show = n => {
-      slides.forEach((s, k) => s.classList.toggle('active', k === n));
-      dots.forEach((d, k) => d.classList.toggle('active', k === n));
-      i = n;
-    };
-    dots.forEach(d => d.addEventListener('click', () => show(+d.dataset.i)));
-    setInterval(() => show((i + 1) % slides.length), 5000);
-  })();
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    const s = document.getElementById('form-success');
-    s.style.display = 'block';
-    e.target.reset();
-    setTimeout(() => s.style.display = 'none', 7000);
-  }
-
-  function handleApplySubmit(e) {
-    e.preventDefault();
-    const s = document.getElementById('apply-success');
-    s.classList.add('show');
-    e.target.reset();
-    setTimeout(() => s.classList.remove('show'), 7000);
-  }
-</script>
-</body>
-</html>
+.footer-bottom { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; font-size: .74rem; color: rgba(244,239,235,.35); padding-top: .5rem; }
+.footer-dot { background: rgba(200,168,75,.08); color: var(--gold); font-size: .6rem; font-weight: 700; letter-spacing: 1.5px; padding: .22rem .7rem; }
