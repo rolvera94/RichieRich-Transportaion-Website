@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rolvera94.github.io/richierich-transportaion-website/sitemap.xml
+Sitemap: https://rolvera94.github.io/RichieRich-Transportaion-Website/sitemap.xml
