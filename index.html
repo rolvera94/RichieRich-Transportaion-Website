@@ -882,17 +882,14 @@ footer { background: #132744; border-top: 3px solid var(--gold); padding: 5.5rem
   /* =====================================================================
      FORM DELIVERY — powered by Web3Forms (free, unlimited).
      ---------------------------------------------------------------------
-     ONE-TIME SETUP (required before the forms can send):
-       1. Go to https://web3forms.com
-       2. Enter the email: richierichtransportationllc@gmail.com
-       3. Web3Forms emails back a free "Access Key" (looks like
-          abcd1234-5678-...). Confirm the email.
-       4. Paste that key between the quotes below, replacing
-          REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY. Save. Done.
-     Every quote request and driver application will then arrive in the
-     Gmail inbox above. Nothing else to install or pay for.
+     Connected: submissions go to richard18olvera@gmail.com (the inbox tied
+     to the key below in the Web3Forms dashboard).
+     To send forms to a different inbox later, either change the email in
+     the Web3Forms dashboard, or create a new key at https://web3forms.com
+     for the new inbox and paste it between the quotes below.
+     The key is safe to publish — it can only deliver to its own inbox.
      ===================================================================== */
-  const WEB3FORMS_KEY = "REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY";
+  const WEB3FORMS_KEY = "b73f12d5-057f-431f-a954-63642b100e42";
 
   async function submitForm(form, successEl, subject) {
     const btn = form.querySelector('button[type="submit"]');

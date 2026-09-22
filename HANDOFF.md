@@ -6,30 +6,25 @@ nothing to log into day-to-day. This guide covers the few things you need to kno
 
 ---
 
-## ✅ 1. REQUIRED before the forms will work (5 minutes, free)
+## ✅ 1. Forms — connected
 
-Right now the "Request a Quote" and "Careers" forms are built but **not yet
-connected**. Until this step is done, submitting a form just tells the visitor to
-call. To make submissions email straight to the Gmail inbox:
+The "Request a Quote" and "Careers" forms are connected through **Web3Forms**
+(free, unlimited). Every submission is emailed to **richard18olvera@gmail.com**.
+Subject lines tell them apart: **"New Quote Request"** and **"New Driver
+Application"**.
 
-1. Go to **https://web3forms.com**
-2. In the box, enter the email: **richierichtransportationllc@gmail.com**
-3. Web3Forms will email that address a free **Access Key** (looks like
-   `abc12345-6789-...`). Open the email and confirm it.
-4. Open `index.html`, find this line near the bottom (inside the `<script>` section):
+**To send forms to a different inbox later**, do either of these:
+- Log in at **https://web3forms.com** and change the email on the
+  "RichieRich Website" form, **or**
+- Create a new key for the new inbox and replace the key in `index.html`
+  (search for `WEB3FORMS_KEY`; keep the quotes).
 
-   ```js
-   const WEB3FORMS_KEY = "REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY";
-   ```
+The email **shown** on the site (contact section and footer,
+`richierichtransportationllc@gmail.com`) is separate. It only controls what
+visitors see, not where forms are delivered.
 
-5. Replace `REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY` with your real key (keep the quotes).
-6. Save and re-upload/commit. Done.
-
-**That's it.** Every quote request and driver application will now land in the
-Gmail inbox above — free, unlimited, forever. No account to manage.
-
-> Tip: After connecting it, submit a test through each form and confirm the email
-> arrives (check spam the first time and mark it "Not spam").
+> Tip: The first few emails may land in spam. Mark them "Not spam" so future
+> ones go to the inbox.
 
 ---
 
