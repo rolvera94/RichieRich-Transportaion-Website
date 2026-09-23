@@ -20,18 +20,17 @@ they fit.
 **What visitors see:** after they press send, the page hops to FormSubmit for a
 second and comes right back with a "Got it" message.
 
-**One-time setup (do this once, right after the site goes live):**
-1. Submit one test quote on the live site.
-2. FormSubmit emails **richard18olvera@gmail.com** an **"Activate Form"** message
-   (check spam). Click **Activate**. That first test won't be delivered; every
-   submission after activation will be.
-3. FormSubmit then offers a **random string** (letters and numbers) you can use
-   instead of the email address. Send it to Claude. It replaces the plain email
-   address in the page code so spammers can't read the address there.
+**Status: activated.** Both forms use FormSubmit's private code for the inbox
+(`formsubmit.co/c03892670506c031e28539ce68d933c4`), so the email address
+itself isn't visible in the page code.
 
-**To send forms to a different inbox later:** replace the email/alias in both
-`action="https://formsubmit.co/..."` lines in `index.html`, then activate the
-new inbox the same way.
+**To send forms to a different inbox later:**
+1. In `index.html`, put the new email address in both
+   `action="https://formsubmit.co/..."` lines.
+2. Submit one test on the live site. FormSubmit emails the new inbox an
+   **Activate** link (check spam); click it. That first test isn't delivered.
+3. FormSubmit gives a new private code for that inbox. Put it in both
+   `action` lines in place of the email address.
 
 The email **shown** on the site (contact panel,
 `richierichtransportationllc@gmail.com`) is separate. It only controls what
