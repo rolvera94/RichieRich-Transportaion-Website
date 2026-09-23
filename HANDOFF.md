@@ -1,25 +1,39 @@
 # RichieRich Transportation LLC — Website Handoff Guide
 
-This is a simple, single-page website. Everything lives in one file (`index.html`)
-plus an `images/` folder. There is no database, no monthly hosting bill, and
-nothing to log into day-to-day. This guide covers the few things you need to know.
+This is a single-page website. Everything lives in one file (`index.html`) plus
+an `images/` folder. There's no database, no monthly bill, and nothing to log
+into day-to-day. This guide covers the few things you need to know.
 
 ---
 
-## ✅ 1. Forms — connected
+## ✅ 1. Forms (quotes and job applications)
 
-The "Request a Quote" and "Careers" forms are connected through **Web3Forms**
-(free, unlimited). Every submission is emailed to **richard18olvera@gmail.com**.
-Subject lines tell them apart: **"New Quote Request"** and **"New Driver
-Application"**.
+Both forms are sent through **FormSubmit** (free, unlimited submissions) to
+**richard18olvera@gmail.com**. Subject lines tell them apart: **"New Quote
+Request"** and **"New Driver Application"**.
 
-**To send forms to a different inbox later**, do either of these:
-- Log in at **https://web3forms.com** and change the email on the
-  "RichieRich Website" form, **or**
-- Create a new key for the new inbox and replace the key in `index.html`
-  (search for `WEB3FORMS_KEY`; keep the quotes).
+**Attachments:** visitors can drag in, or tap to choose, **load photos and
+documents** on the quote form and a **résumé** on the job application. The
+limit is 10 MB total per submission. Phone photos are shrunk automatically so
+they fit.
 
-The email **shown** on the site (contact section and footer,
+**What visitors see:** after they press send, the page hops to FormSubmit for a
+second and comes right back with a "Got it" message.
+
+**One-time setup (do this once, right after the site goes live):**
+1. Submit one test quote on the live site.
+2. FormSubmit emails **richard18olvera@gmail.com** an **"Activate Form"** message
+   (check spam). Click **Activate**. That first test won't be delivered; every
+   submission after activation will be.
+3. FormSubmit then offers a **random string** (letters and numbers) you can use
+   instead of the email address. Send it to Claude. It replaces the plain email
+   address in the page code so spammers can't read the address there.
+
+**To send forms to a different inbox later:** replace the email/alias in both
+`action="https://formsubmit.co/..."` lines in `index.html`, then activate the
+new inbox the same way.
+
+The email **shown** on the site (contact panel,
 `richierichtransportationllc@gmail.com`) is separate. It only controls what
 visitors see, not where forms are delivered.
 
@@ -28,105 +42,71 @@ visitors see, not where forms are delivered.
 
 ---
 
-## 🌐 2. Making the site live (GitHub Pages — free)
+## 🌐 2. The live site (GitHub Pages, free)
 
-The site is hosted for free through GitHub Pages.
+Live address: **https://rolvera94.github.io/RichieRich-Transportaion-Website/**
 
-1. On GitHub, open the repository → **Settings** → **Pages**.
-2. Under "Build and deployment", set **Source: Deploy from a branch**.
-3. Choose branch **`main`** and folder **`/ (root)`**, then **Save**.
-4. Wait ~1 minute. Your live address will be:
-
-   **https://rolvera94.github.io/richierich-transportaion-website/**
-
-Any time you change `index.html` on the `main` branch, the live site updates
-automatically within a minute or two.
+- **Keep the repository public.** GitHub's free plan only publishes public
+  repositories; making it private takes the site offline.
+- Changes merged into `main` go live within a minute or two. Merges you click
+  yourself on GitHub deploy automatically. If a merge doesn't show up, go to
+  **Settings → Pages** and click **Save** to trigger a fresh deploy.
 
 ---
 
 ## 📇 3. Common edits (all in `index.html`)
 
-You can change these by searching the file for the current text and typing over it:
+Search the file for the current text and type over it:
 
-| To change...        | Search for...                          |
-|---------------------|----------------------------------------|
-| Phone number        | `281.468.2201` (appears in a few spots)|
-| Email               | `richierichtransportationllc@gmail.com`|
-| Business hours      | `6am – 8pm CT`                         |
-| USDOT number        | `4024817`                              |
-| TXDMV registration  | `009730224C`                           |
-| Service area states | search for `state-cell`                |
+| To change...          | Search for...                            |
+|-----------------------|------------------------------------------|
+| Phone number          | `281.468.2201` (3 visible spots + links) |
+| Email shown on site   | `richierichtransportationllc@gmail.com`  |
+| Business hours        | `6am – 8pm`                              |
+| USDOT number          | `4024817`                                |
+| TXDMV registration    | `009730224C`                             |
+| Coverage wording      | `Moving freight across Texas`            |
 
-The copyright year at the bottom updates itself automatically each year — no edit needed.
-
----
-
-## 🚚 4. About the "Equipment & Fleet" section
-
-This section highlights the quality and standard of the equipment (flatbeds,
-securement, what we haul) **without listing a specific number of trucks** — so it
-reads as an established, capable operation. The two truck photos are used as
-showcase imagery. To swap a photo, replace the file in the `images/` folder
-(keep the same filename) or update the `src="images/..."` line.
+The copyright year updates itself every year.
 
 ---
 
-## 🖼️ 5. Adding more Houston photos to the slideshow
+## 🚚 4. Photos and the fleet
 
-The "Our Story" section has an auto-playing Houston photo slideshow. It now
-**manages itself** — to add a photo you only add one line; the little navigation
-dot appears automatically.
-
-**Steps:**
-1. Download a photo (see the free, commercial-use-OK list below).
-2. Save it into the `images/` folder, e.g. `images/Houston Night.jpg`.
-3. In `index.html`, find `<div class="houston-track">` and add one line inside it:
-   ```html
-   <img class="houston-slide" src="images/Houston Night.jpg" alt="Downtown Houston at night" />
-   ```
-4. Save. Done — the slideshow now includes it.
-
-**Free Houston photos (safe for a business website — free for commercial use, no
-attribution required).** Open each link and click "Free Download":
-
-| Photo | Link |
-|-------|------|
-| Downtown Houston skyline at night (aerial) | https://www.pexels.com/photo/aerial-view-of-downtown-houston-texas-at-night-15353653/ |
-| Houston skyline over Buffalo Bayou | https://www.pexels.com/photo/modern-skyline-overlooking-houston-s-buffalo-bayou-37406430/ |
-| Buffalo Bayou at twilight, downtown | https://www.pexels.com/photo/scenic-view-of-buffalo-bayou-in-houston-texas-37106432/ |
-| More options (search page) | https://www.pexels.com/search/houston%20skyline/ |
-
-> Best of all: **your own photos of Houston, the trucks, or loads** work great here
-> and make the site more personal. Just drop them in `images/` and add the line above.
-
-**Two sources that are always free for commercial use:**
-[Pexels](https://www.pexels.com) and [Unsplash](https://unsplash.com). Avoid pulling
-images from a Google image search — those are often copyrighted.
+- The site **never lists how many trucks or trailers** we run. It presents a
+  modern, growing fleet by capability (48–53 ft flatbeds, air-ride, tarps,
+  chains and binders).
+- The **Fleet** section and the **"You call Richard"** section use our **real**
+  trucks. Keep those real.
+- Six other photo slots use stand-ins until AI images are made. See
+  **`IMAGE-PROMPTS.md`** for a ready-to-paste prompt and exact filename for
+  each slot. Send the images to Claude and they'll be compressed and swapped in.
 
 ---
 
-## 🔗 6. Custom domain later (optional, ~$10–13/year)
+## 🔗 5. Custom domain later (optional, about $10–13/year)
 
-The free `github.io` address works great to start. If you later want something
-like `richierichtransportation.com`:
+The free `github.io` address works fine. For something like
+`richierichtransportation.com`:
 
-1. Buy the domain (Namecheap, Cloudflare, Google Domains, etc.).
-2. In GitHub → Settings → Pages → "Custom domain", enter your domain.
-3. At your domain registrar, add the DNS records GitHub shows you.
-4. Check "Enforce HTTPS" once it's ready.
+1. Buy the domain (Namecheap, Cloudflare, etc.).
+2. GitHub → Settings → Pages → **Custom domain**, enter it.
+3. At the domain registrar, add the DNS records GitHub shows you.
+4. Check **Enforce HTTPS** once it's ready.
+5. Ask Claude to update the site address in `index.html`, `sitemap.xml`, and
+   `robots.txt`.
 
-The domain is the only part that isn't free — hosting stays $0.
+The domain is the only part that isn't free; hosting stays $0.
 
 ---
 
 ## 📁 File overview
 
 ```
-index.html      ← the entire website (text, layout, forms)
-images/         ← logos, truck photos, Houston photos
-robots.txt      ← helps Google find the site
-sitemap.xml     ← helps Google index the site
-HANDOFF.md      ← this guide
+index.html         ← the entire website (text, layout, forms, Texas map)
+images/            ← logo, truck photos, photo-slot images
+IMAGE-PROMPTS.md   ← AI image prompts for each photo slot
+robots.txt         ← helps Google find the site
+sitemap.xml        ← helps Google index the site
+HANDOFF.md         ← this guide
 ```
-
-Questions or changes down the road — everything is in that one `index.html` file.
