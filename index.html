@@ -107,7 +107,7 @@ a { color: inherit; }
 .logo img { height: 32px; width: auto; }
 .nav { display: flex; align-items: center; gap: 2rem; }
 .nav ul { display: flex; gap: 1.6rem; list-style: none; }
-.nav ul a { font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; color: rgba(242,237,216,.86); transition: color .2s; }
+.nav ul a { display: inline-block; padding-block: .95rem; font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; color: rgba(242,237,216,.86); transition: color .2s; }
 .nav ul a:hover { color: var(--gold); }
 .nav .btn { padding: .75rem 1.1rem; font-size: .72rem; }
 .menu-btn { display: none; background: none; border: 0; cursor: pointer; padding: .5rem; margin-right: -.5rem; }
@@ -173,7 +173,7 @@ a { color: inherit; }
 .checks { list-style: none; display: grid; gap: .45rem; font-size: .9rem; color: var(--muted); }
 .checks li { display: flex; align-items: baseline; gap: .65rem; }
 .checks li::before { content: ""; flex-shrink: 0; width: .72em; height: .38em; border-left: 2px solid var(--gold); border-bottom: 2px solid var(--gold); transform: translateY(-.18em) rotate(-45deg); }
-.explore { margin-top: auto; padding-top: .6rem; display: inline-flex; align-items: center; gap: .55rem; font-size: .7rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; color: var(--cream); transition: color .2s; }
+.explore { margin-top: auto; padding-block: .8rem .6rem; min-height: 44px; display: inline-flex; align-items: center; gap: .55rem; font-size: .7rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; color: var(--cream); transition: color .2s; }
 .explore svg { width: 16px; height: 16px; transition: transform .25s; }
 .explore:hover { color: var(--gold); }
 .explore:hover svg { transform: translateX(4px); }
@@ -197,14 +197,15 @@ a { color: inherit; }
 
 /* ============ STORY ============ */
 .story { background: var(--paper); color: var(--ptext); overflow: hidden; }
-.story-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) minmax(0, 1fr); min-height: clamp(400px, 34vw, 480px); }
-.story-copy { align-self: center; padding: clamp(3rem, 6vw, 4rem) clamp(16px, 3vw, 32px) clamp(3rem, 6vw, 4rem) max(clamp(16px, 4vw, 40px), calc((100vw - 1240px) / 2 + 40px)); }
+.story-grid { display: grid; grid-template-columns: max(clamp(16px, 4vw, 40px), calc((100% - 1240px) / 2 + 40px)) minmax(240px, 380px) minmax(0, 640px) minmax(300px, 1fr); min-height: clamp(400px, 34vw, 480px); }
+.story-copy { grid-column: 2; align-self: center; padding: clamp(3rem, 6vw, 4rem) clamp(16px, 3vw, 32px) clamp(3rem, 6vw, 4rem) 0; }
 .story .eyebrow { color: var(--gold-dk); }
 .story h2 { font-size: clamp(1.9rem, 3.2vw, 2.7rem); margin: .7rem 0 1rem; color: var(--ptext); }
 .story-copy p { color: var(--pmuted); font-size: .95rem; margin-bottom: 1.1rem; }
 .story blockquote { font-style: italic; font-weight: 600; color: var(--ptext); border-left: 3px solid var(--gold); padding-left: 1rem; font-size: .95rem; }
-.tl { position: relative; align-self: center; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; padding: 3rem clamp(12px, 2vw, 28px); }
-.tl-line { position: absolute; left: clamp(12px, 2vw, 28px); right: clamp(12px, 2vw, 28px); bottom: calc(3rem + 6px); height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 1.6s cubic-bezier(.4,0,.2,1); }
+.tl { grid-column: 3; align-self: center; container-type: inline-size; padding: 3rem clamp(12px, 2vw, 28px); }
+.tl-in { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.tl-line { position: absolute; left: 0; right: 0; bottom: 6px; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 1.6s cubic-bezier(.4,0,.2,1); }
 .tl-item { display: flex; flex-direction: column; gap: .35rem; opacity: 0; transform: translateY(14px); transition: opacity .7s, transform .7s; }
 .tl-item .yr { font-family: 'Archivo', sans-serif; font-stretch: 118%; font-weight: 850; font-size: clamp(1.5rem, 2.4vw, 2rem); line-height: 1; color: var(--ptext); }
 .tl-item strong { font-size: .76rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--ptext); }
@@ -214,7 +215,14 @@ a { color: inherit; }
 .tl.on .tl-item { opacity: 1; transform: none; }
 .tl.on .tl-item:nth-child(3) { transition-delay: .35s; }
 .tl.on .tl-item:nth-child(4) { transition-delay: .7s; }
-.story-media { position: relative; overflow: hidden; min-height: 280px; }
+.story-media { grid-column: 4; position: relative; overflow: hidden; min-height: 280px; }
+@container (max-width: 619px) {
+  .tl-in { grid-template-columns: 1fr; gap: 0; padding-left: 2rem; }
+  .tl-line { left: 6px; right: auto; top: .6rem; bottom: 1.6rem; width: 2px; height: auto; transform: scaleY(0); transform-origin: top; }
+  .tl.on .tl-line { transform: scaleY(1); }
+  .tl-item { position: relative; padding-bottom: 1.6rem; }
+  .tl-item .dot { position: absolute; left: -2rem; top: .35rem; margin: 0; }
+}
 .story-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .story-media::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, var(--paper) 0%, rgba(236,233,225,0) 28%), linear-gradient(180deg, transparent 45%, rgba(7,15,28,.55)); }
 .story-media .script { position: absolute; z-index: 2; right: 1.4rem; bottom: 1.2rem; font-family: 'Kaushan Script', cursive; font-size: clamp(1.6rem, 2.6vw, 2.3rem); line-height: 1.05; color: var(--gold2); text-align: right; transform: rotate(-6deg); text-shadow: 0 2px 14px rgba(0,0,0,.6); }
@@ -279,7 +287,7 @@ a { color: inherit; }
 .drop-list .th { width: 38px; height: 38px; flex-shrink: 0; object-fit: cover; background: var(--n7); display: grid; place-items: center; font-size: .6rem; font-weight: 800; letter-spacing: .08em; color: var(--gold); }
 .drop-list .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .drop-list .sz { color: rgba(242,237,216,.5); font-variant-numeric: tabular-nums; font-size: .78rem; white-space: nowrap; }
-.drop-list button { background: none; border: 1px solid transparent; color: rgba(242,237,216,.6); cursor: pointer; font-size: 1.15rem; line-height: 1; width: 32px; height: 32px; flex-shrink: 0; }
+.drop-list button { background: none; border: 1px solid transparent; color: rgba(242,237,216,.6); cursor: pointer; font-size: 1.15rem; line-height: 1; width: 44px; height: 44px; flex-shrink: 0; }
 .drop-list button:hover, .drop-list button:focus-visible { color: var(--gold); border-color: var(--line); }
 .drop-err { margin-top: .5rem; font-size: .84rem; color: #F2A48C; }
 .ft-creds { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; }
@@ -316,7 +324,7 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
 .apply-head h3 { font-size: clamp(1.5rem, 3vw, 2rem); margin-top: .5rem; }
 .apply-head p { color: var(--muted); font-size: .88rem; margin-top: .5rem; }
 .apply-head p a { color: var(--gold); }
-.x { background: none; border: 1px solid var(--line); color: var(--cream); width: 40px; height: 40px; flex-shrink: 0; cursor: pointer; font-size: 1.3rem; line-height: 1; transition: border-color .2s, color .2s; }
+.x { background: none; border: 1px solid var(--line); color: var(--cream); width: 44px; height: 44px; flex-shrink: 0; cursor: pointer; font-size: 1.3rem; line-height: 1; transition: border-color .2s, color .2s; }
 .x:hover { border-color: var(--gold); color: var(--gold); }
 .apply form { padding: 1.4rem 1.6rem 1.8rem; }
 
@@ -356,12 +364,9 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
   .fleet-media::after { background: linear-gradient(180deg, transparent 55%, var(--ink) 100%); }
   .fleet-copy { max-width: none; padding-inline: clamp(16px, 4vw, 40px); padding-top: 1rem; }
   .story-grid { grid-template-columns: 1fr; }
+  .story-copy, .tl, .story-media { grid-column: auto; }
   .story-copy { padding: 3.5rem clamp(16px, 4vw, 40px) 0; }
-  .tl { grid-template-columns: 1fr; gap: 0; padding: 2rem clamp(16px, 4vw, 40px) 3rem calc(clamp(16px, 4vw, 40px) + 2rem); }
-  .tl-line { left: calc(clamp(16px, 4vw, 40px) + 6px); right: auto; top: 2.6rem; bottom: 3.4rem; width: 2px; height: auto; transform: scaleY(0); transform-origin: top; }
-  .tl.on .tl-line { transform: scaleY(1); }
-  .tl-item { position: relative; padding-bottom: 1.6rem; }
-  .tl-item .dot { position: absolute; left: -2rem; top: .35rem; margin: 0; }
+  .tl { padding: 2rem clamp(16px, 4vw, 40px) 3rem; }
   .story-media { min-height: 300px; }
   .story-media::before { background: linear-gradient(180deg, var(--paper) 0%, rgba(236,233,225,0) 30%), linear-gradient(180deg, transparent 45%, rgba(7,15,28,.55)); }
   .duo-grid { grid-template-columns: 1fr; }
@@ -381,6 +386,12 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
   .spec svg { grid-row: span 2; margin: 0; }
   .fgrid { grid-template-columns: 1fr; }
   .hero-inner { padding-bottom: 3.5rem; }
+}
+@media (orientation: landscape) and (max-height: 540px) {
+  .hero { min-height: 0; }
+  .hero-inner { padding-top: calc(var(--hdr) + 1.4rem); padding-bottom: 2.2rem; }
+  .hero h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); max-width: none; margin: .3rem 0 .8rem; }
+  .lede { font-size: .95rem; max-width: 40rem; margin-bottom: 1.2rem; }
 }
 @media (max-width: 380px) {
   .trust ul { grid-template-columns: 1fr; }
@@ -542,10 +553,12 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
       <blockquote class="rv" data-d="3">"My name is on the door. My family is riding on every load I deliver. That's why I never cut corners."</blockquote>
     </div>
     <div class="tl" id="timeline">
+      <div class="tl-in">
       <div class="tl-line" aria-hidden="true"></div>
       <div class="tl-item"><span class="yr">2021</span><strong>The first load</strong><span class="desc">Tomball, Texas. A name on the door and a promise to keep.</span><i class="dot"></i></div>
       <div class="tl-item"><span class="yr">2022</span><strong>One reputation</strong><span class="desc">Word of mouth becomes the engine.</span><i class="dot"></i></div>
       <div class="tl-item"><span class="yr">Today</span><strong>RichieRich Transportation</strong><span class="desc">Still owner-operated. Still accountable.</span><i class="dot"></i></div>
+      </div>
     </div>
     <div class="story-media">
       <img src="images/story.jpg" alt="Houston, Texas" loading="lazy" />
@@ -585,7 +598,7 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
         <button type="button" class="btn btn-gold" data-open-apply>Apply Now <svg class="arr"><use href="#arr"/></svg></button>
       </div>
       <p class="note rv" data-d="3">Also hiring owner-operators, dispatch, and maintenance.</p>
-      <p id="apply-done" class="form-ok" hidden>✓ Application received. Richard will review it and reach out to you directly.</p>
+      <p id="apply-done" class="form-ok" hidden>✓ Thank you for your application. You will be contacted as soon as possible.</p>
     </div>
   </div>
 </section>
@@ -619,7 +632,7 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
           <div class="field full"><label for="q-freight">Freight type</label><input id="q-freight" type="text" name="Freight Type" placeholder="Steel coils, lumber, machinery, pipe…" /></div>
           <div class="field"><label for="q-co">Company</label><input id="q-co" type="text" name="Company" placeholder="Company name (optional)" /></div>
           <div class="field"><label for="q-name">Contact name</label><input id="q-name" type="text" name="Contact Name" placeholder="Your name" required /></div>
-          <div class="field"><label for="q-phone">Phone</label><input id="q-phone" type="tel" name="Phone" placeholder="(555) 000-0000" /></div>
+          <div class="field"><label for="q-phone">Phone</label><input id="q-phone" type="tel" name="Phone" placeholder="(555) 000-0000" inputmode="tel" autocomplete="tel" /></div>
           <div class="field"><label for="q-email">Email</label><input id="q-email" type="email" name="email" placeholder="you@company.com" required /></div>
           <div class="field full"><label for="q-details">Tell us about the load</label><textarea id="q-details" name="Load Details" placeholder="Weight, dimensions, pieces, tarps, pickup window…"></textarea></div>
           <div class="field full">
@@ -635,7 +648,7 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
         <div class="form-actions">
           <button type="submit" class="btn btn-gold nudge">Send Load Details <svg class="arr"><use href="#arr"/></svg></button>
         </div>
-        <div id="form-success" class="form-ok" hidden>✓ Got it. Richard will get back to you shortly.</div>
+        <div id="form-success" class="form-ok" hidden>✓ Thank you for your submission. You will be contacted as soon as possible.</div>
       </form>
     </div>
     <aside class="talk rv" data-d="2" id="contact">
@@ -702,7 +715,7 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
     <div class="fgrid">
       <div class="field"><label for="a-first">First name</label><input id="a-first" type="text" name="First Name" placeholder="John" required /></div>
       <div class="field"><label for="a-last">Last name</label><input id="a-last" type="text" name="Last Name" placeholder="Smith" required /></div>
-      <div class="field"><label for="a-phone">Phone</label><input id="a-phone" type="tel" name="Phone" placeholder="(555) 000-0000" required /></div>
+      <div class="field"><label for="a-phone">Phone</label><input id="a-phone" type="tel" name="Phone" placeholder="(555) 000-0000" inputmode="tel" autocomplete="tel" required /></div>
       <div class="field"><label for="a-email">Email</label><input id="a-email" type="email" name="email" placeholder="you@example.com" required /></div>
       <div class="field"><label for="a-pos">Position</label>
         <select id="a-pos" name="Position" required>
@@ -767,7 +780,7 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
     <div class="form-actions">
       <button type="submit" class="btn btn-gold">Submit Application <svg class="arr"><use href="#arr"/></svg></button>
     </div>
-    <div id="apply-success" class="form-ok" hidden>✓ Application received. Richard will review it and reach out to you directly.</div>
+    <div id="apply-success" class="form-ok" hidden>✓ Thank you for your application. You will be contacted as soon as possible.</div>
   </form>
 </dialog>
 
@@ -956,7 +969,7 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
     form.addEventListener('submit', async e => {
       e.preventDefault();
       if (window.FS_PREVIEW) {
-        ok.textContent = 'Preview only: on the live site this goes to Richard, attachments included.';
+        ok.textContent = 'Preview only: on the live site this form is sent, attachments included.';
         ok.hidden = false;
         return;
       }
@@ -980,6 +993,20 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
       if (next && /^https?:$/.test(location.protocol)) next.value = location.origin + location.pathname + '?sent=' + next.dataset.next;
       HTMLFormElement.prototype.submit.call(form);
     });
+  });
+
+  // Phone numbers format themselves as you type: (555) 000-0000
+  function formatPhone(value) {
+    let d = value.replace(/\D/g, '');
+    if (d.length > 10 && d[0] === '1') d = d.slice(1);
+    d = d.slice(0, 10);
+    if (d.length === 0) return '';
+    if (d.length <= 3) return '(' + d;
+    if (d.length <= 6) return '(' + d.slice(0, 3) + ') ' + d.slice(3);
+    return '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6);
+  }
+  document.querySelectorAll('input[type="tel"]').forEach(inp => {
+    inp.addEventListener('input', () => { inp.value = formatPhone(inp.value); });
   });
 
   // Coming back from Back after sending: re-enable the buttons.
