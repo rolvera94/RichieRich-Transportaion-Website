@@ -125,15 +125,11 @@ a { color: inherit; }
     linear-gradient(90deg, rgba(7,15,28,.95) 0%, rgba(7,15,28,.82) 30%, rgba(7,15,28,.35) 58%, rgba(7,15,28,.08) 100%),
     linear-gradient(180deg, rgba(7,15,28,.6) 0%, transparent 24%, transparent 68%, rgba(7,15,28,.95) 100%); }
 .hero-inner { padding-top: calc(var(--hdr) + 3rem); padding-bottom: 5rem; }
-.hero .kicker { display: flex; align-items: center; gap: 1rem; font-size: .74rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cream); }
-.hero .kicker::after { content: ""; width: 48px; height: 1px; background: var(--gold); }
 .hero h1 { font-size: clamp(2.6rem, 6.6vw, 5.8rem); max-width: 13ch; margin: 1.2rem 0 1.5rem; }
 .hero h1 span { display: block; }
 .hero h1 .l1 { color: #fff; }
 .hero h1 .l2 { color: var(--gold); }
 .lede { max-width: 33rem; font-size: clamp(1rem, 1.25vw, 1.14rem); color: var(--muted); margin-bottom: 2.2rem; }
-.hero-meta { margin-top: 2.6rem; display: flex; flex-wrap: wrap; gap: .4rem 1rem; font-size: .7rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(242,237,216,.62); }
-.hero-meta i { font-style: normal; color: var(--gold); }
 
 /* ============ TRUST STRIP ============ */
 .trust { background: var(--n8); border-block: 1px solid var(--line); }
@@ -160,9 +156,6 @@ a { color: inherit; }
 .diff p { color: var(--muted); font-size: 1.02rem; margin-bottom: 2rem; }
 .diff .btn svg.ph { width: 18px; height: 18px; }
 .diff .tel { font-size: 1.05rem; letter-spacing: .08em; }
-.points { display: flex; flex-wrap: wrap; gap: .6rem 1.6rem; margin-top: 2rem; font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(242,237,216,.7); }
-.points span { display: inline-flex; align-items: center; gap: .5rem; }
-.points span::before { content: ""; width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); }
 
 /* ============ SERVICES ============ */
 .svc { background: linear-gradient(180deg, var(--n9), var(--ink)); }
@@ -184,8 +177,6 @@ a { color: inherit; }
 .explore svg { width: 16px; height: 16px; transition: transform .25s; }
 .explore:hover { color: var(--gold); }
 .explore:hover svg { transform: translateX(4px); }
-.creds { margin-top: 2.2rem; display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 2rem; font-size: .7rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgba(242,237,216,.5); }
-.creds b { color: rgba(242,237,216,.8); font-weight: 700; }
 
 /* ============ FLEET ============ */
 .fleet { position: relative; background: var(--ink); overflow: hidden; border-top: 1px solid var(--line); }
@@ -250,9 +241,6 @@ a { color: inherit; }
 .req-label { margin: 1.8rem 0 .8rem; font-size: .7rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
 .careers .checks { font-size: .95rem; margin-bottom: 2rem; }
 .careers .btns { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
-.careers .call { font-size: .8rem; font-weight: 700; color: var(--muted); text-decoration: none; }
-.careers .call b { color: var(--cream); }
-.careers .call:hover b { color: var(--gold); }
 .careers .note { margin-top: 1.4rem; font-size: .82rem; color: rgba(242,237,216,.55); }
 
 /* ============ QUOTE ============ */
@@ -274,7 +262,27 @@ a { color: inherit; }
 .route { position: relative; }
 .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 1.4rem; }
 .form-actions small { font-size: .78rem; color: rgba(242,237,216,.5); }
-.form-ok { display: none; margin-top: 1.2rem; padding: .9rem 1.1rem; border: 1px solid rgba(200,168,75,.5); background: rgba(200,168,75,.1); color: var(--gold2); font-weight: 600; font-size: .92rem; }
+.form-ok { margin-top: 1.2rem; padding: .9rem 1.1rem; border: 1px solid rgba(200,168,75,.5); background: rgba(200,168,75,.1); color: var(--gold2); font-weight: 600; font-size: .92rem; }
+[hidden] { display: none !important; }
+.opt { color: rgba(242,237,216,.42); text-transform: none; letter-spacing: 0; font-weight: 500; }
+.drop { position: relative; border: 1.5px dashed rgba(200,168,75,.45); background: rgba(255,255,255,.03); padding: 1.4rem 1rem; text-align: center; transition: border-color .2s, background .2s; }
+.drop.over, .drop:focus-within { border-color: var(--gold); background: rgba(200,168,75,.08); }
+.drop-input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.drop-ui { pointer-events: none; }
+.drop-ui svg { display: block; width: 30px; height: 30px; color: var(--gold); margin: 0 auto .5rem; }
+.drop-ui p { font-size: .92rem; color: var(--cream); }
+.drop-ui u { color: var(--gold); text-underline-offset: 3px; }
+.drop-ui small { display: block; margin-top: .3rem; font-size: .76rem; color: rgba(242,237,216,.5); }
+.drop-list { list-style: none; display: grid; gap: .5rem; margin-top: .6rem; }
+.drop-list:empty { display: none; }
+.drop-list li { display: flex; align-items: center; gap: .75rem; padding: .5rem .6rem; border: 1px solid var(--line); background: rgba(255,255,255,.03); font-size: .85rem; }
+.drop-list .th { width: 38px; height: 38px; flex-shrink: 0; object-fit: cover; background: var(--n7); display: grid; place-items: center; font-size: .6rem; font-weight: 800; letter-spacing: .08em; color: var(--gold); }
+.drop-list .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.drop-list .sz { color: rgba(242,237,216,.5); font-variant-numeric: tabular-nums; font-size: .78rem; white-space: nowrap; }
+.drop-list button { background: none; border: 1px solid transparent; color: rgba(242,237,216,.6); cursor: pointer; font-size: 1.15rem; line-height: 1; width: 32px; height: 32px; flex-shrink: 0; }
+.drop-list button:hover, .drop-list button:focus-visible { color: var(--gold); border-color: var(--line); }
+.drop-err { margin-top: .5rem; font-size: .84rem; color: #F2A48C; }
+.ft-creds { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; }
 .talk { border: 1px solid var(--line); background: rgba(255,255,255,.03); padding: clamp(1.6rem, 3vw, 2.2rem); position: sticky; top: calc(var(--hdr) + 20px); }
 .talk .lbl { font-size: .7rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: rgba(242,237,216,.6); }
 .talk .phone { display: inline-flex; align-items: center; gap: .7rem; margin: .7rem 0 .4rem; font-family: 'Archivo', sans-serif; font-stretch: 112%; font-weight: 850; font-size: clamp(1.6rem, 2.6vw, 2.1rem); color: var(--gold); text-decoration: none; }
@@ -424,13 +432,11 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
 <section class="hero" id="home">
   <div class="hero-media"><img id="heroImg" src="images/hero.jpg" alt="Flatbed truck loaded with steel" fetchpriority="high" /></div>
   <div class="wrap hero-inner">
-    <p class="kicker rv">RichieRich Transportation LLC</p>
     <h1 class="display"><span class="l1 rv" data-d="1">Freight.</span><span class="l2 rv" data-d="2">Without the runaround.</span></h1>
-    <p class="lede rv" data-d="3">Flatbed transportation built around accountability, communication, and getting the load there right.</p>
+    <p class="lede rv" data-d="3">Flatbed freight across Texas, handled by the owner from pickup to delivery. Clear answers, secured loads, and no one passing the buck.</p>
     <div class="rv" data-d="4">
-      <a href="#quote" class="btn btn-gold nudge">Request a Quote <svg class="arr"><use href="#arr"/></svg></a>
+      <a href="#quote" class="btn btn-gold nudge">Move Your Freight <svg class="arr"><use href="#arr"/></svg></a>
     </div>
-    <p class="hero-meta rv" data-d="4">Tomball, TX <i>|</i> Flatbed <i>|</i> FTL <i>|</i> Heavy &amp; Oversized <i>|</i> Across Texas</p>
   </div>
 </section>
 
@@ -439,7 +445,7 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
   <ul class="wrap">
     <li class="rv"><svg><use href="#tx-shape"/></svg><div><strong>Tomball, TX</strong><small>Based &amp; operated</small></div></li>
     <li class="rv" data-d="1"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M4 30h30v-6H4z"/><path d="M34 30h6l4-5v-5h-6l-2-4h-2"/><circle cx="12" cy="34" r="3.5"/><circle cx="22" cy="34" r="3.5"/><circle cx="39" cy="34" r="3.5"/></svg><div><strong>Flatbed</strong><small>Specialist</small></div></li>
-    <li class="rv" data-d="2"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M17 24l5 5 9-10"/></svg><div><strong>Fully Insured</strong><small>USDOT registered</small></div></li>
+    <li class="rv" data-d="2"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M17 24l5 5 9-10"/></svg><div><strong>Fully Insured</strong><small>DOT compliant</small></div></li>
     <li class="rv" data-d="3"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M24 44s14-12.5 14-24a14 14 0 0 0-28 0c0 11.5 14 24 14 24z"/><circle cx="24" cy="20" r="5"/></svg><div><strong>Texas</strong><small>Our operating area</small></div></li>
   </ul>
 </section>
@@ -456,7 +462,6 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
       <h2 class="display rv" data-d="1"><span>You call Richard.</span><span class="gold">Not a call center.</span></h2>
       <p class="rv" data-d="2">When your freight is on the road, you shouldn't have to wonder who's responsible for it. At RichieRich Transportation, the person you call is the person accountable for the load. No middlemen, no hold music. One name. One standard.</p>
       <a href="tel:2814682201" class="btn btn-gold tel rv" data-d="3"><svg class="ph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>281.468.2201</a>
-      <div class="points rv" data-d="4"><span>Owner answers</span><span>Insured &amp; DOT compliant</span><span>Built on word of mouth</span></div>
     </div>
   </div>
 </section>
@@ -475,7 +480,7 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
           <span class="num">01</span>
           <h3>Flatbed</h3>
           <ul class="checks"><li>Steel</li><li>Lumber</li><li>Machinery</li><li>Equipment</li></ul>
-          <a href="#quote" class="explore" data-service="Flatbed">Get a quote <svg><use href="#arr"/></svg></a>
+          <a href="#quote" class="explore" data-service="Flatbed">Ship on a flatbed <svg><use href="#arr"/></svg></a>
         </div>
       </article>
       <article class="svc-card rv" data-d="1">
@@ -484,7 +489,7 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
           <span class="num">02</span>
           <h3>Full Truckload</h3>
           <ul class="checks"><li>Dedicated capacity</li><li>Direct routes</li><li>No shared trailer</li></ul>
-          <a href="#quote" class="explore" data-service="Full Truckload (FTL)">Get a quote <svg><use href="#arr"/></svg></a>
+          <a href="#quote" class="explore" data-service="Full Truckload (FTL)">Book a full truckload <svg><use href="#arr"/></svg></a>
         </div>
       </article>
       <article class="svc-card rv" data-d="2">
@@ -493,7 +498,7 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
           <span class="num">03</span>
           <h3>Across Texas</h3>
           <ul class="checks"><li>Houston-area based</li><li>Local &amp; statewide runs</li><li>Flexible scheduling</li></ul>
-          <a href="#quote" class="explore" data-service="Across Texas">Get a quote <svg><use href="#arr"/></svg></a>
+          <a href="#quote" class="explore" data-service="Across Texas">Plan a Texas run <svg><use href="#arr"/></svg></a>
         </div>
       </article>
       <article class="svc-card rv" data-d="3">
@@ -502,11 +507,10 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
           <span class="num">04</span>
           <h3>Specialized</h3>
           <ul class="checks"><li>Heavy &amp; oversized</li><li>Project freight</li><li>Tarped &amp; secured</li></ul>
-          <a href="#quote" class="explore" data-service="Specialized / Heavy / Oversized">Get a quote <svg><use href="#arr"/></svg></a>
+          <a href="#quote" class="explore" data-service="Specialized / Heavy / Oversized">Talk heavy haul <svg><use href="#arr"/></svg></a>
         </div>
       </article>
     </div>
-    <p class="creds rv"><span>USDOT <b>4024817</b></span><span>TXDMV <b>009730224C</b></span><span>Fully insured</span><span>Texas LLC</span></p>
   </div>
 </section>
 
@@ -518,7 +522,7 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
       <p class="eyebrow rv">The Fleet</p>
       <h2 class="display rv" data-d="1">Built to haul.</h2>
       <h3 class="rv" data-d="2">48–53 ft flatbeds</h3>
-      <p class="rv" data-d="2">A modern, growing flatbed fleet, held to one standard: clean, inspected, and loaded right. Every truck that rolls out carries the RichieRich name and the reputation that comes with it.</p>
+      <p class="rv" data-d="2">A modern, growing flatbed fleet, kept clean, inspected, and ready to roll. Every truck that leaves the yard carries the RichieRich name and the reputation behind it.</p>
       <div class="specs">
         <div class="spec rv" data-d="1"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M6 8h36"/><path d="M14 8v4c-5 1-5 6 0 7-5 1-5 6 0 7v4M34 8v4c-5 1-5 6 0 7-5 1-5 6 0 7v4"/><path d="M8 30h32"/><circle cx="14" cy="38" r="6"/><circle cx="34" cy="38" r="6"/></svg><strong>Air-Ride</strong><small>Smoother ride. Safer freight.</small></div>
         <div class="spec rv" data-d="2"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M4 36L10 12h28l6 24z"/><path d="M4 36h40M16 12l-3 24M32 12l3 24M24 12v24"/><path d="M8 42h32"/></svg><strong>Tarps</strong><small>Weather protection when it matters.</small></div>
@@ -575,13 +579,13 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
       <p class="eyebrow rv">Careers</p>
       <h2 class="display rv" data-d="1">Run with us.</h2>
       <p class="rv" data-d="2">We're not chasing size. We're building a team of drivers who take pride in doing the job right, with real equipment and an owner who picks up the phone.</p>
-      <p class="req-label rv">Requirements · Driving positions</p>
+      <p class="req-label rv">Requirements for drivers</p>
       <ul class="checks rv" data-d="1"><li>Valid CDL</li><li>2+ years flatbed experience</li><li>Clean driving record (2 years)</li><li>Valid TWIC card</li></ul>
       <div class="btns rv" data-d="2">
         <button type="button" class="btn btn-gold" data-open-apply>Apply Now <svg class="arr"><use href="#arr"/></svg></button>
-        <a class="call" href="tel:2814682201">or call <b>281.468.2201</b></a>
       </div>
       <p class="note rv" data-d="3">Also hiring owner-operators, dispatch, and maintenance.</p>
+      <p id="apply-done" class="form-ok" hidden>✓ Application received. Richard will review it and reach out to you directly.</p>
     </div>
   </div>
 </section>
@@ -590,12 +594,14 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
 <section class="quote sec-pad" id="quote">
   <div class="wrap quote-grid">
     <div>
-      <p class="eyebrow rv">Let's Talk Freight</p>
       <h2 class="display rv" data-d="1"><span>Have freight to move?</span><span class="gold">Let's talk.</span></h2>
-      <p class="intro rv" data-d="2">Tell us where it's going, what you're hauling, and when you need it there. We respond the same day.</p>
-      <form class="rv" data-d="3" onsubmit="handleSubmit(event)">
-        <input type="hidden" name="form_type" value="Quote Request" />
-        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none !important;" aria-hidden="true" />
+      <p class="intro rv" data-d="2">Tell us where it's going, what you're hauling, and when it needs to be there. Attach photos or paperwork if you have them. We respond the same day.</p>
+      <form class="rv" data-d="3" data-fs method="POST" enctype="multipart/form-data" action="https://formsubmit.co/richard18olvera@gmail.com">
+        <input type="hidden" name="_subject" value="New Quote Request — RichieRich Website" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://rolvera94.github.io/RichieRich-Transportaion-Website/?sent=quote#quote" data-next="quote#quote" />
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none !important;" aria-hidden="true" />
         <div class="fgrid">
           <div class="field"><label for="q-pick">Pickup location</label><input id="q-pick" type="text" name="Pickup Location" placeholder="City, TX" /></div>
           <div class="field"><label for="q-drop">Delivery location</label><input id="q-drop" type="text" name="Delivery Location" placeholder="City, TX" /></div>
@@ -614,14 +620,22 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
           <div class="field"><label for="q-co">Company</label><input id="q-co" type="text" name="Company" placeholder="Company name (optional)" /></div>
           <div class="field"><label for="q-name">Contact name</label><input id="q-name" type="text" name="Contact Name" placeholder="Your name" required /></div>
           <div class="field"><label for="q-phone">Phone</label><input id="q-phone" type="tel" name="Phone" placeholder="(555) 000-0000" /></div>
-          <div class="field"><label for="q-email">Email</label><input id="q-email" type="email" name="Email" placeholder="you@company.com" required /></div>
+          <div class="field"><label for="q-email">Email</label><input id="q-email" type="email" name="email" placeholder="you@company.com" required /></div>
           <div class="field full"><label for="q-details">Tell us about the load</label><textarea id="q-details" name="Load Details" placeholder="Weight, dimensions, pieces, tarps, pickup window…"></textarea></div>
+          <div class="field full">
+            <label for="q-files">Photos or documents <span class="opt">(optional)</span></label>
+            <div class="drop" data-drop data-max-files="5">
+              <input id="q-files" class="drop-input" type="file" multiple accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.csv" />
+              <div class="drop-ui"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4M7 9l5-5 5 5"/><path d="M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg><p><b>Drag files here</b> or <u>browse</u></p><small>Load photos, rate sheets, drawings. Up to 5 files, 10 MB total.</small></div>
+            </div>
+            <ul class="drop-list" aria-live="polite"></ul>
+            <p class="drop-err" role="alert" hidden></p>
+          </div>
         </div>
         <div class="form-actions">
-          <button type="submit" class="btn btn-gold nudge">Request a Quote <svg class="arr"><use href="#arr"/></svg></button>
-          <small>Goes straight to Richard's inbox.</small>
+          <button type="submit" class="btn btn-gold nudge">Send Load Details <svg class="arr"><use href="#arr"/></svg></button>
         </div>
-        <div id="form-success" class="form-ok">✓ Message received! Richard will be in touch with you shortly.</div>
+        <div id="form-success" class="form-ok" hidden>✓ Got it. Richard will get back to you shortly.</div>
       </form>
     </div>
     <aside class="talk rv" data-d="2" id="contact">
@@ -632,10 +646,10 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
       <p class="lbl">Email</p>
       <p style="margin-top:.5rem;"><a class="email" href="mailto:richierichtransportationllc@gmail.com">richierichtransportationllc@gmail.com</a></p>
       <hr />
-      <p class="lbl">Hours · Tomball, TX</p>
+      <p class="lbl">Hours (Central Time)</p>
       <ul class="hours">
-        <li><span>Mon – Fri</span><span>6am – 8pm CT</span></li>
-        <li><span>Saturday</span><span>7am – 5pm CT</span></li>
+        <li><span>Mon – Fri</span><span>6am – 8pm</span></li>
+        <li><span>Saturday</span><span>7am – 5pm</span></li>
         <li><span>Sunday</span><span>By appointment</span></li>
       </ul>
     </aside>
@@ -659,12 +673,12 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
       </ul>
       <div class="ft-contact">
         <div><a href="tel:2814682201">281.468.2201</a></div>
-        <div>Tomball, TX &nbsp;|&nbsp; Serving Texas</div>
+        <div>Tomball, Texas</div>
       </div>
     </div>
     <div class="ft-bottom">
       <div>© <span id="year">2026</span> RichieRich Transportation LLC. All rights reserved.</div>
-      <div>USDOT 4024817 · TXDMV 009730224C</div>
+      <div class="ft-creds"><span>USDOT 4024817</span><span>TXDMV 009730224C</span></div>
     </div>
   </div>
 </footer>
@@ -673,20 +687,23 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
 <dialog class="apply" id="applyDialog" aria-labelledby="applyTitle">
   <div class="apply-head">
     <div>
-      <p class="eyebrow">Careers</p>
+      <p class="eyebrow">Driver application</p>
       <h3 class="display" id="applyTitle">Apply to run with us</h3>
-      <p>Takes about two minutes. Richard reviews every application personally. Prefer email? Send your résumé to <a href="mailto:richierichtransportationllc@gmail.com">richierichtransportationllc@gmail.com</a>.</p>
+      <p>Takes about two minutes. Richard reviews every application personally. Attach your résumé below, or send it to <a href="mailto:richierichtransportationllc@gmail.com">richierichtransportationllc@gmail.com</a>.</p>
     </div>
     <button type="button" class="x" data-close-apply aria-label="Close application">×</button>
   </div>
-  <form onsubmit="handleApplySubmit(event)">
-    <input type="hidden" name="form_type" value="Driver Application" />
-    <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none !important;" aria-hidden="true" />
+  <form data-fs method="POST" enctype="multipart/form-data" action="https://formsubmit.co/richard18olvera@gmail.com">
+    <input type="hidden" name="_subject" value="New Driver Application — RichieRich Website" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://rolvera94.github.io/RichieRich-Transportaion-Website/?sent=apply#careers" data-next="apply#careers" />
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none !important;" aria-hidden="true" />
     <div class="fgrid">
       <div class="field"><label for="a-first">First name</label><input id="a-first" type="text" name="First Name" placeholder="John" required /></div>
       <div class="field"><label for="a-last">Last name</label><input id="a-last" type="text" name="Last Name" placeholder="Smith" required /></div>
       <div class="field"><label for="a-phone">Phone</label><input id="a-phone" type="tel" name="Phone" placeholder="(555) 000-0000" required /></div>
-      <div class="field"><label for="a-email">Email</label><input id="a-email" type="email" name="Email" placeholder="you@example.com" required /></div>
+      <div class="field"><label for="a-email">Email</label><input id="a-email" type="email" name="email" placeholder="you@example.com" required /></div>
       <div class="field"><label for="a-pos">Position</label>
         <select id="a-pos" name="Position" required>
           <option value="">Select a position…</option>
@@ -737,11 +754,20 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
         </select>
       </div>
       <div class="field full"><label for="a-about">Tell us about yourself</label><textarea id="a-about" name="About the Applicant" placeholder="Previous companies, equipment you've run, why you want to join RichieRich…"></textarea></div>
+      <div class="field full">
+            <label for="a-files">Résumé <span class="opt">(optional)</span></label>
+            <div class="drop" data-drop data-max-files="2">
+              <input id="a-files" class="drop-input" type="file" multiple accept="image/*,.pdf,.doc,.docx" />
+              <div class="drop-ui"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4M7 9l5-5 5 5"/><path d="M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></svg><p><b>Drag files here</b> or <u>browse</u></p><small>PDF, Word, or a photo of it. Up to 2 files, 10 MB total.</small></div>
+            </div>
+            <ul class="drop-list" aria-live="polite"></ul>
+            <p class="drop-err" role="alert" hidden></p>
+          </div>
     </div>
     <div class="form-actions">
       <button type="submit" class="btn btn-gold">Submit Application <svg class="arr"><use href="#arr"/></svg></button>
     </div>
-    <div id="apply-success" class="form-ok">✓ Application received! Richard will review it and reach out to you directly.</div>
+    <div id="apply-success" class="form-ok" hidden>✓ Application received. Richard will review it and reach out to you directly.</div>
   </form>
 </dialog>
 
@@ -815,63 +841,160 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
   applyDialog.addEventListener('click', e => { if (e.target === applyDialog) applyDialog.close(); });
 
   /* =====================================================================
-     FORM DELIVERY — powered by Web3Forms (free, unlimited).
+     FORMS — powered by FormSubmit (free, unlimited, attachments up to 10 MB).
      ---------------------------------------------------------------------
-     Connected: submissions go to richard18olvera@gmail.com (the inbox tied
-     to the key below in the Web3Forms dashboard).
-     To send forms to a different inbox later, either change the email in
-     the Web3Forms dashboard, or create a new key at https://web3forms.com
-     for the new inbox and paste it between the quotes below.
-     The key is safe to publish — it can only deliver to its own inbox.
+     Both forms post to FormSubmit, which emails richard18olvera@gmail.com
+     and sends the visitor back here with ?sent=quote or ?sent=apply.
+     First use: FormSubmit emails that inbox an "Activate" link. After
+     activating, replace the email address in both form "action" URLs with
+     the random-string alias FormSubmit provides (keeps the address private).
      ===================================================================== */
-  const WEB3FORMS_KEY = "b73f12d5-057f-431f-a954-63642b100e42";
+  const MAX_BYTES = 10 * 1024 * 1024;
+  const fmtSize = b => b < 1048576 ? Math.max(1, Math.round(b / 1024)) + ' KB' : (b / 1048576).toFixed(1) + ' MB';
 
-  async function submitForm(form, successEl, subject) {
-    const btn = form.querySelector('button[type="submit"]');
-    const originalHTML = btn ? btn.innerHTML : '';
-
-    // Guard: if the key hasn't been set yet, don't pretend it sent.
-    if (!WEB3FORMS_KEY || WEB3FORMS_KEY.indexOf('REPLACE_WITH') === 0) {
-      alert("This form isn't connected yet. Please call Richard directly at 281.468.2201 or email richierichtransportationllc@gmail.com.");
-      return;
-    }
-
-    const data = new FormData(form);
-    data.append('access_key', WEB3FORMS_KEY);
-    data.append('subject', subject);
-    data.append('from_name', 'RichieRich Transportation Website');
-
-    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+  // Shrink phone photos before sending so they fit the 10 MB limit.
+  async function shrinkImage(file) {
+    if (!/^image\/(jpeg|png|webp)$/.test(file.type) || file.size < 400 * 1024) return file;
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: data
-      });
-      const json = await res.json();
-      if (json.success) {
-        successEl.style.display = 'block';
-        form.reset();
-        setTimeout(() => { successEl.style.display = 'none'; }, 8000);
-      } else {
-        alert("Sorry — something went wrong sending your message. Please call Richard directly at 281.468.2201.");
-      }
+      const bmp = await createImageBitmap(file);
+      const scale = Math.min(1, 1600 / Math.max(bmp.width, bmp.height));
+      const c = document.createElement('canvas');
+      c.width = Math.round(bmp.width * scale);
+      c.height = Math.round(bmp.height * scale);
+      c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
+      const blob = await new Promise(r => c.toBlob(r, 'image/jpeg', 0.8));
+      if (!blob || blob.size >= file.size) return file;
+      return new File([blob], file.name.replace(/\.[^.]+$/, '') + '.jpg', { type: 'image/jpeg' });
     } catch (err) {
-      alert("Network error — please check your connection, or call Richard directly at 281.468.2201.");
-    } finally {
-      if (btn) { btn.disabled = false; btn.innerHTML = originalHTML; }
+      return file;
     }
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    submitForm(e.target, document.getElementById('form-success'), 'New Quote Request — RichieRich Website');
+  // Drag-and-drop / tap-to-choose attachment box.
+  function setupDrop(field) {
+    const zone = field.querySelector('[data-drop]');
+    const input = field.querySelector('.drop-input');
+    const list = field.querySelector('.drop-list');
+    const err = field.querySelector('.drop-err');
+    const maxFiles = Number(zone.dataset.maxFiles) || 5;
+    const accept = input.accept.split(',').map(s => s.trim().toLowerCase());
+    const state = { files: [], pending: [] };
+    const okType = f => accept.some(a => a.endsWith('/*') ? f.type.startsWith(a.slice(0, -1)) : f.name.toLowerCase().endsWith(a));
+    const total = () => state.files.reduce((s, f) => s + f.size, 0);
+    const showErr = msg => { err.textContent = msg; err.hidden = !msg; };
+
+    function render() {
+      list.innerHTML = '';
+      state.files.forEach((f, i) => {
+        const li = document.createElement('li');
+        let th;
+        if (f.type.startsWith('image/')) {
+          th = document.createElement('img');
+          th.alt = '';
+          th.src = URL.createObjectURL(f);
+          th.onload = () => URL.revokeObjectURL(th.src);
+        } else {
+          th = document.createElement('span');
+          th.textContent = (f.name.split('.').pop() || 'file').slice(0, 4).toUpperCase();
+        }
+        th.className = 'th';
+        const nm = document.createElement('span');
+        nm.className = 'nm';
+        nm.textContent = f.name;
+        const sz = document.createElement('span');
+        sz.className = 'sz';
+        sz.textContent = fmtSize(f.size);
+        const rm = document.createElement('button');
+        rm.type = 'button';
+        rm.textContent = '×';
+        rm.setAttribute('aria-label', 'Remove ' + f.name);
+        rm.addEventListener('click', () => { state.files.splice(i, 1); showErr(''); render(); });
+        li.append(th, nm, sz, rm);
+        list.appendChild(li);
+      });
+    }
+
+    async function add(fileList) {
+      showErr('');
+      const incoming = Array.from(fileList);
+      const job = (async () => {
+        for (const raw of incoming) {
+          if (!okType(raw)) { showErr('"' + raw.name + '" isn\'t a supported file type.'); continue; }
+          if (state.files.length >= maxFiles) { showErr('You can attach up to ' + maxFiles + ' files.'); break; }
+          const f = await shrinkImage(raw);
+          if (total() + f.size > MAX_BYTES) { showErr('"' + f.name + '" would go over the 10 MB total. Try a smaller file.'); continue; }
+          state.files.push(f);
+          render();
+        }
+      })();
+      state.pending.push(job);
+      await job;
+      state.pending = state.pending.filter(j => j !== job);
+    }
+
+    input.addEventListener('change', () => { add(input.files); input.value = ''; });
+    ['dragenter', 'dragover'].forEach(t => zone.addEventListener(t, e => { e.preventDefault(); zone.classList.add('over'); }));
+    ['dragleave', 'drop'].forEach(t => zone.addEventListener(t, () => zone.classList.remove('over')));
+    zone.addEventListener('drop', e => {
+      e.preventDefault();
+      if (e.dataTransfer && e.dataTransfer.files.length) add(e.dataTransfer.files);
+    });
+    return state;
   }
 
-  function handleApplySubmit(e) {
-    e.preventDefault();
-    submitForm(e.target, document.getElementById('apply-success'), 'New Driver Application — RichieRich Website');
-  }
+  // A file dropped beside a box shouldn't open in the browser tab.
+  ['dragover', 'drop'].forEach(t => window.addEventListener(t, e => e.preventDefault()));
+
+  document.querySelectorAll('form[data-fs]').forEach(form => {
+    const zone = form.querySelector('[data-drop]');
+    const drop = zone ? setupDrop(zone.closest('.field')) : { files: [], pending: [] };
+    const btn = form.querySelector('button[type="submit"]');
+    btn.dataset.label = btn.innerHTML;
+    const ok = form.querySelector('.form-ok');
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      if (window.FS_PREVIEW) {
+        ok.textContent = 'Preview only: on the live site this goes to Richard, attachments included.';
+        ok.hidden = false;
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      await Promise.all(drop.pending);
+      // FormSubmit reliably takes one file per input, so give each file its own.
+      form.querySelectorAll('input[data-attach]').forEach(i => i.remove());
+      drop.files.forEach((f, i) => {
+        const inp = document.createElement('input');
+        inp.type = 'file';
+        inp.name = 'attachment' + (i + 1);
+        inp.hidden = true;
+        inp.dataset.attach = '';
+        const dt = new DataTransfer();
+        dt.items.add(f);
+        inp.files = dt.files;
+        form.appendChild(inp);
+      });
+      const next = form.querySelector('[data-next]');
+      if (next && /^https?:$/.test(location.protocol)) next.value = location.origin + location.pathname + '?sent=' + next.dataset.next;
+      HTMLFormElement.prototype.submit.call(form);
+    });
+  });
+
+  // Coming back from Back after sending: re-enable the buttons.
+  window.addEventListener('pageshow', e => {
+    if (!e.persisted) return;
+    document.querySelectorAll('form[data-fs] button[type="submit"]').forEach(b => { b.disabled = false; b.innerHTML = b.dataset.label; });
+  });
+
+  // Back from FormSubmit (?sent=quote|apply): show the confirmation, tidy the URL.
+  (function () {
+    const sent = new URLSearchParams(location.search).get('sent');
+    if (!sent) return;
+    const el = document.getElementById(sent === 'apply' ? 'apply-done' : 'form-success');
+    if (el) el.hidden = false;
+    history.replaceState(null, '', location.pathname + location.hash);
+  })();
 
   /* Auto-updating copyright year */
   document.getElementById('year').textContent = new Date().getFullYear();
