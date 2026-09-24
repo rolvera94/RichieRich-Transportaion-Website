@@ -74,7 +74,7 @@ The copyright year updates itself every year.
 ## 🚚 4. Photos and the fleet
 
 - The site **never lists how many trucks or trailers** we run. It presents a
-  modern, growing fleet by capability (48–53 ft flatbeds, air-ride, tarps,
+  modern, growing fleet by capability (48 ft flatbeds, air-ride, tarps,
   chains and binders).
 - The **Fleet** section and the **"You call Richard"** section use our **real**
   trucks. Keep those real.
