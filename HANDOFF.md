@@ -43,7 +43,8 @@ visitors see, not where forms are delivered.
 
 ## 🌐 2. The live site (GitHub Pages, free)
 
-Live address: **https://rolvera94.github.io/RichieRich-Transportaion-Website/**
+Live address: **https://richierichtransportation.com**
+(the old `rolvera94.github.io/...` address redirects there automatically).
 
 - **Keep the repository public.** GitHub's free plan only publishes public
   repositories; making it private takes the site offline.
@@ -83,19 +84,22 @@ The copyright year updates itself every year.
 
 ---
 
-## 🔗 5. Custom domain later (optional, about $10–13/year)
+## 🔗 5. The domain: richierichtransportation.com
 
-The free `github.io` address works fine. For something like
-`richierichtransportation.com`:
+Bought at **GoDaddy** (renews yearly, about $10–25; keep auto-renew on or the
+site goes offline). Hosting stays free on GitHub Pages.
 
-1. Buy the domain (Namecheap, Cloudflare, etc.).
-2. GitHub → Settings → Pages → **Custom domain**, enter it.
-3. At the domain registrar, add the DNS records GitHub shows you.
-4. Check **Enforce HTTPS** once it's ready.
-5. Ask Claude to update the site address in `index.html`, `sitemap.xml`, and
-   `robots.txt`.
-
-The domain is the only part that isn't free; hosting stays $0.
+How it's connected (don't change these unless moving hosts):
+- **GoDaddy → DNS:** four **A** records for `@` pointing to `185.199.108.153`,
+  `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and a **CNAME**
+  for `www` pointing to `rolvera94.github.io`. `www.` redirects to the main
+  address.
+- **The `CNAME` file** in this repository contains `richierichtransportation.com`.
+  It tells GitHub which domain to serve. **Don't delete it.**
+- **GitHub → Settings → Pages:** custom domain set, **Enforce HTTPS** checked
+  (the padlock).
+- The email-related DNS rows at GoDaddy (`_domainkey`, MX) are separate and
+  should be left alone.
 
 ---
 
