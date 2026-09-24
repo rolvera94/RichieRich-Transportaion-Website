@@ -46,11 +46,7 @@
     "addressRegion": "TX",
     "addressCountry": "US"
   },
-  "areaServed": { "@type": "State", "name": "Texas" },
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "06:00", "closes": "20:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "17:00" }
-  ]
+  "areaServed": { "@type": "State", "name": "Texas" }
 }
 </script>
 
@@ -300,10 +296,8 @@ a { color: inherit; }
 .talk hr { border: 0; border-top: 1px solid var(--line); margin: 1.4rem 0; }
 .talk .email { font-size: .88rem; font-weight: 600; color: var(--cream); text-decoration: none; overflow-wrap: anywhere; }
 .talk .email:hover { color: var(--gold); }
-.hours { list-style: none; display: grid; gap: .4rem; margin-top: .9rem; font-size: .84rem; }
-.hours li { display: flex; justify-content: space-between; gap: 1rem; }
-.hours li span:first-child { color: rgba(242,237,216,.6); }
-.hours li span:last-child { font-weight: 700; }
+.talk .avail { margin: .7rem 0 .6rem; font-family: 'Archivo', sans-serif; font-stretch: 112%; font-weight: 800; font-size: 1.05rem; line-height: 1.25; letter-spacing: .03em; text-transform: uppercase; color: var(--cream); }
+.talk .avail-cta { margin-top: .7rem; font-weight: 700; color: var(--gold); }
 
 /* ============ FOOTER ============ */
 footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0 2rem; font-size: .85rem; color: var(--muted); }
@@ -659,12 +653,10 @@ footer { background: #050B15; border-top: 1px solid var(--line); padding: 3rem 0
       <p class="lbl">Email</p>
       <p style="margin-top:.5rem;"><a class="email" href="mailto:richierichtransportationllc@gmail.com">richierichtransportationllc@gmail.com</a></p>
       <hr />
-      <p class="lbl">Hours (Central Time)</p>
-      <ul class="hours">
-        <li><span>Mon – Fri</span><span>6am – 8pm</span></li>
-        <li><span>Saturday</span><span>7am – 5pm</span></li>
-        <li><span>Sunday</span><span>By appointment</span></li>
-      </ul>
+      <p class="lbl">Availability</p>
+      <p class="avail">Scheduling Available 7&nbsp;Days a&nbsp;Week</p>
+      <p>We respond to all inquiries and coordinate pickup and delivery times based on your transportation needs.</p>
+      <p class="avail-cta">Contact us to schedule your haul.</p>
     </aside>
   </div>
 </section>
