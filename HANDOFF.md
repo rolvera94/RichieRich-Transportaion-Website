@@ -101,6 +101,21 @@ How it's connected (don't change these unless moving hosts):
 - The email-related DNS rows at GoDaddy (`_domainkey`, MX) are separate and
   should be left alone.
 
+### If a company's network blocks the site
+
+Some business networks show "Your connection is not private"
+(`NET::ERR_CERT_AUTHORITY_INVALID`) or a block page instead of the site. That's
+the company's web filter, not the website. To confirm, click **Not secure →
+Certificate is not valid** and read **Issued By**:
+- **Let's Encrypt** (R10, R11, E5…) is the real certificate. Anything else, such
+  as **NetAlerts** (DNSFilter), FortiGate or Zscaler, is the filter's.
+- Fix for that office: their IT allowlists `richierichtransportation.com`.
+- Fix for everyone on that filter: ask the filter company to rate the site as
+  **Business / Transportation**. Most have a free public form.
+
+Filters often block any domain under about 30 days old, so new-domain blocks
+also clear with time.
+
 ---
 
 ## 📁 File overview
