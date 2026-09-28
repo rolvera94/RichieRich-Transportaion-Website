@@ -101,6 +101,18 @@ How it's connected (don't change these unless moving hosts):
 - The email-related DNS rows at GoDaddy (`_domainkey`, MX) are separate and
   should be left alone.
 
+### If the site shows "too many redirects" or a 404
+
+GoDaddy can replace the four GitHub **A** records with a single **A @ Parked**
+record. Accepting a GoDaddy offer to set up a website, forwarding or parking
+does this. Fix it in GoDaddy → DNS:
+1. **Forwarding** tab: delete any domain forward.
+2. **DNS Records**: edit the **Parked** row to `185.199.108.153`, then add
+   **A** records for **@** with `185.199.109.153`, `185.199.110.153` and
+   `185.199.111.153` (TTL 1 Hour).
+3. GitHub → **Settings → Pages** shows "DNS Check in Progress", then "DNS check
+   successful" within about an hour. Test in an Incognito window.
+
 ### If a company's network blocks the site
 
 Some business networks show "Your connection is not private"
