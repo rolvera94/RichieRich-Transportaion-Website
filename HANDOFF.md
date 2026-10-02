@@ -1,7 +1,7 @@
 # RichieRich Transportation LLC — Website Handoff Guide
 
-This is a single-page website. Everything lives in one file (`index.html`) plus
-an `images/` folder. There's no database, no monthly bill, and nothing to log
+This is a single-page website. Everything lives in `index.html` (text and
+layout) and `site.js` (menu, motion, forms) plus an `images/` folder. There's no database, no monthly bill, and nothing to log
 into day-to-day. This guide covers the few things you need to know.
 
 ---
@@ -9,7 +9,7 @@ into day-to-day. This guide covers the few things you need to know.
 ## ✅ 1. Forms (quotes and job applications)
 
 Both forms are sent through **FormSubmit** (free, unlimited submissions) to
-**richard18olvera@gmail.com**. Subject lines tell them apart: **"New Quote
+**Richard's Gmail** (the address FormSubmit was activated with). Subject lines tell them apart: **"New Quote
 Request"** and **"New Driver Application"**.
 
 **Attachments:** visitors can drag in, or tap to choose, **load photos and
@@ -130,10 +130,46 @@ also clear with time.
 
 ---
 
+## 🔒 6. Security
+
+**Built into the site**
+- No logins, passwords, payments or database on the website, so there is
+  nothing on it to break into. It's static files served by GitHub over HTTPS.
+- A security policy in `index.html` (the `Content-Security-Policy` line)
+  tells browsers to run only this site's own code, load fonts only from
+  Google, and send forms only to FormSubmit. If an outside service is added
+  later (chat widget, analytics, a map), its address has to be added to that
+  line or the browser blocks it.
+- The forms never ask for SSNs, license numbers or bank details. Keep it that
+  way: those belong in a secure onboarding step, not a website form.
+- Attachments are limited to photos, PDFs and Word/Excel files, 10 MB total.
+  A determined sender can bypass any website check, so the inbox is the real
+  safety net: open attachments only when they match a real quote or
+  application, and never click "Enable editing" or "Enable macros" on a Word
+  or Excel file from someone you don't know.
+- Forms use a hidden spam trap. If spam starts arriving, change
+  `_captcha` from `false` to `true` in both forms to add FormSubmit's
+  "I'm not a robot" check.
+
+**Accounts (this is where the real risk is)**
+Anyone who gets into one of these accounts can change or take down the site.
+Turn on **2-step verification** for all of them and use a unique password:
+- **GitHub** (`rolvera94`): controls the website's content.
+- **GoDaddy**: controls the domain. Also keep **Domain Lock** and
+  **auto-renew** on, and keep the GoDaddy account's email and phone current.
+- **Gmail** inboxes: Richard's (form submissions) and
+  `richierichtransportationllc@gmail.com` (shown on the site).
+- **Web3Forms** (old form service, no longer used): delete the form or the
+  account. Its key is in this repository's history and could be used to send
+  spam to Richard's inbox.
+
+---
+
 ## 📁 File overview
 
 ```
-index.html         ← the entire website (text, layout, forms, Texas map)
+index.html         ← the website's text, layout, forms and Texas map
+site.js            ← menu, scroll motion, attachments, phone formatting
 images/            ← logo, truck photos, photo-slot images
 IMAGE-PROMPTS.md   ← AI image prompts for each photo slot
 robots.txt         ← helps Google find the site
